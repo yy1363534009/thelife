@@ -1,9 +1,9 @@
 server:
-  port: 6011
+  port: 9021
 
 spring:
   application:
-    name: TheLife-Server-Jobsearch
+    name: TheLife-Auth
 
 eureka:
   client:

@@ -13,6 +13,7 @@
         <module>../thelife-webapp</module>
         <module>../thelife-base</module>
         <module>../thelife-server-jobsearch</module>
+        <module>../thelife-auth</module>
     </modules>
     <!--修改打包方式-->
     <packaging>pom</packaging>

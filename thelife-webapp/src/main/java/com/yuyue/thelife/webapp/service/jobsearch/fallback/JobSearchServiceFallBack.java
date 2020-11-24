@@ -1,7 +1,7 @@
-package com.yuyue.thelife.webapp.wechat.service.fallback;
+package com.yuyue.thelife.webapp.service.jobsearch.fallback;
 
 import com.yuyue.thelife.webapp.wechat.base.result.TheLifeResult;
-import com.yuyue.thelife.webapp.wechat.service.JobSearchService;
+import com.yuyue.thelife.webapp.service.jobsearch.JobSearchService;
 import org.springframework.stereotype.Component;
 
 /**
