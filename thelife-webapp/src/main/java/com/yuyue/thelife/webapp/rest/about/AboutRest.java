@@ -1,6 +1,6 @@
 package com.yuyue.thelife.webapp.rest.about;
 
-import com.yuyue.thelife.webapp.wechat.base.result.TheLifeResult;
+import com.yuyue.thelife.base.result.TheLifeResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AboutRest {
 
     @GetMapping
-    public TheLifeResult get() {
+    public TheLifeResponse get() {
         Object object = "获取用户信息成功";
-        return TheLifeResult.ok(object);
+        return TheLifeResponse.ok(object);
     }
 
 }

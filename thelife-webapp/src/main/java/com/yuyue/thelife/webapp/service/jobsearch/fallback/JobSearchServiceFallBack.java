@@ -1,6 +1,6 @@
 package com.yuyue.thelife.webapp.service.jobsearch.fallback;
 
-import com.yuyue.thelife.webapp.wechat.base.result.TheLifeResult;
+import com.yuyue.thelife.base.result.TheLifeResponse;
 import com.yuyue.thelife.webapp.service.jobsearch.JobSearchService;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class JobSearchServiceFallBack implements JobSearchService {
 
     @Override
-    public TheLifeResult get() {
+    public TheLifeResponse get() {
         return null;
     }
 

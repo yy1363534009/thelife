@@ -1,6 +1,6 @@
 package com.yuyue.thelife.jobsearch.rest;
 
-import com.yuyue.thelife.webapp.wechat.base.result.TheLifeResult;
+import com.yuyue.thelife.base.result.TheLifeResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +19,9 @@ public class JobSearchRest {
     private String applicationName;
 
     @GetMapping
-    public TheLifeResult get() {
+    public TheLifeResponse get() {
         Object object = "获取找工作信息成功" + applicationName;
-        return TheLifeResult.ok(object);
+        return TheLifeResponse.ok(object);
     }
 
 }

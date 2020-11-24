@@ -1,6 +1,6 @@
 package com.yuyue.thelife.webapp.service.jobsearch;
 
-import com.yuyue.thelife.webapp.wechat.base.result.TheLifeResult;
+import com.yuyue.thelife.base.result.TheLifeResponse;
 import com.yuyue.thelife.webapp.service.jobsearch.fallback.JobSearchServiceFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface JobSearchService {
 
     @GetMapping(value = "/jobsearch")
-    public TheLifeResult get();
+    public TheLifeResponse get();
 
 }
