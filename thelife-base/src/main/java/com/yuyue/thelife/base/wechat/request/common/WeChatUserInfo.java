@@ -1,15 +1,13 @@
 package com.yuyue.thelife.base.wechat.request.common;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @Description:
  * @Auther: yuyue
  * @create: 2020-11-24 23:11:22
  */
-@Getter
-@Setter
+@Data
 public class WeChatUserInfo {
 
     /**
