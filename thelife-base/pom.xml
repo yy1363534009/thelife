@@ -14,9 +14,11 @@
 
     <dependencies>
         <!--类中setter/getter,使用注解-->
+        <!--lombok插件-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <!-- 工具类依赖 -->
         <dependency>

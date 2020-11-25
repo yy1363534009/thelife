@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thelife-auth</artifactId>
+    <name>认证服务</name>
 
     <dependencies>
         <dependency>
