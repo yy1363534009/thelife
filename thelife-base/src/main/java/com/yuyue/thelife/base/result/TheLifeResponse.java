@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class TheLifeResponse implements Serializable {
 
     // 响应业务状态
-    private Integer code;
+    private Integer status;
 
     // 响应消息
     private String message;
@@ -23,18 +23,18 @@ public class TheLifeResponse implements Serializable {
     public TheLifeResponse() {
     }
     public TheLifeResponse(Object data) {
-        this.code = 200;
+        this.status = 200;
         this.message = "OK";
         this.data = data;
     }
     public TheLifeResponse(String message, Object data) {
-        this.code = 200;
+        this.status = 200;
         this.message = message;
         this.data = data;
     }
 
-    public TheLifeResponse(Integer code, String message, Object data) {
-        this.code = code;
+    public TheLifeResponse(Integer status, String message, Object data) {
+        this.status = status;
         this.message = message;
         this.data = data;
     }
@@ -52,12 +52,12 @@ public class TheLifeResponse implements Serializable {
         return new TheLifeResponse(message, data);
     }
 
-    public static TheLifeResponse build(Integer code, String message) {
-        return new TheLifeResponse(code, message, null);
+    public static TheLifeResponse build(Integer status, String message) {
+        return new TheLifeResponse(status, message, null);
     }
 
-    public static TheLifeResponse build(Integer code, String message, Object data) {
-        return new TheLifeResponse(code, message, data);
+    public static TheLifeResponse build(Integer status, String message, Object data) {
+        return new TheLifeResponse(status, message, data);
     }
 
     public String toJsonString() {
