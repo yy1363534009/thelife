@@ -1,13 +1,14 @@
-package com.yuyue.thelife.zuul.security.filter;
+package com.yuyue.thelife.zuul.filter;
 
 import cn.hutool.core.util.StrUtil;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import com.yuyue.thelife.zuul.security.config.bean.SecurityProperties;
+import com.yuyue.thelife.zuul.config.bean.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,10 @@ import javax.servlet.http.HttpServletRequest;
  * @Auther: yuyue
  * @create: 2020-11-25 23:03:36
  */
-public class AuthenticationFilter extends ZuulFilter {
+@Component
+public class JWTTokenFilter extends ZuulFilter {
 
-    private static final Logger log = LoggerFactory.getLogger(AuthenticationFilter.class);
+    private static final Logger log = LoggerFactory.getLogger(JWTTokenFilter.class);
 
     @Autowired
     private SecurityProperties properties;
@@ -71,7 +73,9 @@ public class AuthenticationFilter extends ZuulFilter {
         RequestContext context = RequestContext.getCurrentContext();
 
         HttpServletRequest request = context.getRequest();
+        System.out.println("zuul拦截请求：" + request.getRequestURL());
         String token = resolveToken(request);
+        System.out.println("请求头token：" + token);
         // 对于 Token 为空的不需要去查 Redis
         if (StrUtil.isNotBlank(token)) {
 

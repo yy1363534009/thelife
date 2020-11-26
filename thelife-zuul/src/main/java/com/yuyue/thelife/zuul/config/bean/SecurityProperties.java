@@ -1,4 +1,4 @@
-package com.yuyue.thelife.zuul.security.config.bean;
+package com.yuyue.thelife.zuul.config.bean;
 
 import lombok.Data;
 

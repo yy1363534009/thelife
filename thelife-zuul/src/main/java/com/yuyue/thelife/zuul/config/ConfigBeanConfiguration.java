@@ -1,6 +1,6 @@
-package com.yuyue.thelife.zuul.security.config;
+package com.yuyue.thelife.zuul.config;
 
-import com.yuyue.thelife.zuul.security.config.bean.SecurityProperties;
+import com.yuyue.thelife.zuul.config.bean.SecurityProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

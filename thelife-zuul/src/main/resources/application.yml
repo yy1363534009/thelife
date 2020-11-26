@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: TheLife-Zuul
+  profiles:
+    active: dev
 
 eureka:
   client:
