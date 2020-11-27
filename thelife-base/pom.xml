@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thelife-base</artifactId>
+    <name>基础项目</name>
 
     <dependencies>
         <!--类中setter/getter,使用注解-->

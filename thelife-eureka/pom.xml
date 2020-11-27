@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thelife-eureka</artifactId>
+    <name>注册中心服务</name>
 
     <dependencies>
         <!-- 导入Eureka-server 服务端依赖 -->

@@ -9,6 +9,7 @@
         <relativePath>../thelife-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <name>找活微服务</name>
 
     <artifactId>thelife-server-jobsearch</artifactId>
 
