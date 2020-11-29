@@ -21,10 +21,10 @@
         </dependency>
 
         <!--Spring boot 安全框架-->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
+        </dependency>
         <!--eureka客户端依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
