@@ -1,4 +1,4 @@
-package com.yuyue.thelife.webapp.service.auth;
+package com.yuyue.thelife.webapp.auth.service.auth;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
 import org.springframework.cloud.openfeign.FeignClient;

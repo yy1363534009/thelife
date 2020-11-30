@@ -1,8 +1,8 @@
-package com.yuyue.thelife.webapp.rest.auth;
+package com.yuyue.thelife.webapp.auth.rest;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
 import com.yuyue.thelife.base.wechat.request.WeChatAuthUserRequest;
-import com.yuyue.thelife.webapp.service.auth.AuthService;
+import com.yuyue.thelife.webapp.auth.service.auth.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

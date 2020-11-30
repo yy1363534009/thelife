@@ -1,4 +1,4 @@
-package com.yuyue.thelife.webapp.rest.about;
+package com.yuyue.thelife.webapp.about.rest;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
 import org.springframework.web.bind.annotation.*;
