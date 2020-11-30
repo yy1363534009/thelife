@@ -1,7 +1,7 @@
-package com.yuyue.thelife.webapp.jobsearch.service.jobsearch.fallback;
+package com.yuyue.thelife.webapp.jobsearch.service.fallback;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
-import com.yuyue.thelife.webapp.jobsearch.service.jobsearch.JobSearchService;
+import com.yuyue.thelife.webapp.jobsearch.service.JobSearchService;
 import org.springframework.stereotype.Component;
 
 /**

@@ -24,7 +24,7 @@ public class TheLifeResponse implements Serializable {
     }
     public TheLifeResponse(Object data) {
         this.status = 200;
-        this.message = "OK";
+        this.message = "SUCCESS";
         this.data = data;
     }
     public TheLifeResponse(String message, Object data) {
@@ -39,16 +39,16 @@ public class TheLifeResponse implements Serializable {
         this.data = data;
     }
 
-    public static TheLifeResponse ok() {
+    public static TheLifeResponse Success() {
         return new TheLifeResponse(null);
     }
-    public static TheLifeResponse ok(String message) {
+    public static TheLifeResponse Success(String message) {
         return new TheLifeResponse(message, null);
     }
-    public static TheLifeResponse ok(Object data) {
+    public static TheLifeResponse Success(Object data) {
         return new TheLifeResponse(data);
     }
-    public static TheLifeResponse ok(String message, Object data) {
+    public static TheLifeResponse Success(String message, Object data) {
         return new TheLifeResponse(message, data);
     }
 

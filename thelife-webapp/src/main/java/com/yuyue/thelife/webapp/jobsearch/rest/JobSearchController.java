@@ -1,7 +1,7 @@
 package com.yuyue.thelife.webapp.jobsearch.rest;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
-import com.yuyue.thelife.webapp.jobsearch.service.jobsearch.JobSearchService;
+import com.yuyue.thelife.webapp.jobsearch.service.JobSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

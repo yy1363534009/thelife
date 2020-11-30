@@ -2,7 +2,7 @@ package com.yuyue.thelife.webapp.auth.rest;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
 import com.yuyue.thelife.base.wechat.request.WeChatAuthUserRequest;
-import com.yuyue.thelife.webapp.auth.service.auth.AuthService;
+import com.yuyue.thelife.webapp.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +20,8 @@ public class AuthController {
     @PostMapping(value = "/login")
     public TheLifeResponse login(@RequestBody WeChatAuthUserRequest weChatAuthUserRequest){
         System.out.println(weChatAuthUserRequest);
-        TheLifeResponse.ok(weChatAuthUserRequest);
-        return TheLifeResponse.ok("post注册成功");
+        TheLifeResponse.Success(weChatAuthUserRequest);
+        return TheLifeResponse.Success("post注册成功");
     }
 
     @GetMapping(value = "/login")

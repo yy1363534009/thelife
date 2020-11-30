@@ -15,7 +15,7 @@ public class AboutController {
     @GetMapping
     public TheLifeResponse get() {
         Object object = "获取用户信息成功";
-        return TheLifeResponse.ok(object);
+        return TheLifeResponse.Success(object);
     }
 
 }

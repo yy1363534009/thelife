@@ -1,7 +1,7 @@
-package com.yuyue.thelife.webapp.jobsearch.service.jobsearch;
+package com.yuyue.thelife.webapp.jobsearch.service;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
-import com.yuyue.thelife.webapp.jobsearch.service.jobsearch.fallback.JobSearchServiceFallBack;
+import com.yuyue.thelife.webapp.jobsearch.service.fallback.JobSearchServiceFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

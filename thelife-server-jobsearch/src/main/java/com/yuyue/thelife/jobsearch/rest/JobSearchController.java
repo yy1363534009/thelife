@@ -21,7 +21,7 @@ public class JobSearchController {
     @GetMapping
     public TheLifeResponse get() {
         Object object = "获取找工作信息成功" + applicationName;
-        return TheLifeResponse.ok(object);
+        return TheLifeResponse.Success(object);
     }
 
 }

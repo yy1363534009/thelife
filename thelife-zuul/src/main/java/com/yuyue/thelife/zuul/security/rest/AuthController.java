@@ -16,14 +16,14 @@ public class AuthController {
     @PostMapping(value = "/login")
     public TheLifeResponse login(@RequestBody WeChatAuthUserRequest weChatAuthUserRequest){
         System.out.println(weChatAuthUserRequest);
-        TheLifeResponse.ok(weChatAuthUserRequest);
-        return TheLifeResponse.ok("post注册成功");
+        TheLifeResponse.Success(weChatAuthUserRequest);
+        return TheLifeResponse.Success("post注册成功");
     }
 
     @GetMapping(value = "/login")
     public TheLifeResponse login1(){
         System.out.println("/auth/login");
-        return TheLifeResponse.ok("get注册成功");
+        return TheLifeResponse.Success("get注册成功");
     }
 
 }
