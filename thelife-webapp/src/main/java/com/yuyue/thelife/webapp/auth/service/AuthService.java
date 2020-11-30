@@ -1,8 +1,11 @@
 package com.yuyue.thelife.webapp.auth.service;
 
 import com.yuyue.thelife.base.result.JsonRestResponseVo;
+import com.yuyue.thelife.base.security.dto.AuthUserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @Auther: yuyue
@@ -11,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(name = "TheLife-Zuul")
 public interface AuthService {
 
-    @GetMapping(value = "/auth/login")
-    JsonRestResponseVo login1();
+    @PostMapping(value = "/auth/login")
+    JsonRestResponseVo login(@RequestBody AuthUserDto authUserDto);
 
 }

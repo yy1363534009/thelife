@@ -14,6 +14,7 @@
     <name>网关服务</name>
 
     <dependencies>
+        <!--基础模块-->
         <dependency>
             <groupId>com.yuyue.thelife</groupId>
             <artifactId>thelife-base</artifactId>
@@ -25,11 +26,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
+        <!--Spring boot Redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
         <!--eureka客户端依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
         <!--zuul路由网关依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

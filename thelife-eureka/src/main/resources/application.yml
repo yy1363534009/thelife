@@ -5,6 +5,17 @@ spring:
   application:
     name: TheLife-Eureka
 
+  #redis配置
+  redis:
+    #数据库索引
+    database: 0
+    host: 47.104.107.189
+    port: 6379
+    #password:
+    password: yuyue520
+    #连接超时时间
+    timeout: 5000
+
 eureka:
   instance:
     hostname: localhost # eureka服务端的实例名称

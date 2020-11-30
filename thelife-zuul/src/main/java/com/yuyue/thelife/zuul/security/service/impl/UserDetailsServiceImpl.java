@@ -1,7 +1,8 @@
 package com.yuyue.thelife.zuul.security.service.impl;
 
-import com.yuyue.thelife.zuul.security.service.dto.JwtUserDto;
+import com.yuyue.thelife.zuul.security.dto.JwtUserDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,6 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         JwtUserDto jwtUserDto = new JwtUserDto();
         jwtUserDto.setUsername("admin");
         jwtUserDto.setPassword(passwordEncoder.encode("1234"));
+        jwtUserDto.setAuthorities(AuthorityUtils.commaSeparatedStringToAuthorityList("ADMIN"));
         return jwtUserDto;
     }
 

@@ -1,6 +1,5 @@
-package com.yuyue.thelife.zuul.security.service.dto;
+package com.yuyue.thelife.zuul.security.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;

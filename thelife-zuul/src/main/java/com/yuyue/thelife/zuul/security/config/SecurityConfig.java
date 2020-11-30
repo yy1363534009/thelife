@@ -101,10 +101,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/druid/**").permitAll()
                 // 放行OPTIONS请求
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                //
-                .antMatchers("/auth/login").permitAll()
                 //微服务路径
                 .antMatchers("/thelife-webapp/about", "/thelife-webapp/jobsearch").permitAll()
+                //security登录接口
+                .antMatchers("/auth/login").permitAll()
                 .antMatchers("/thelife-webapp/auth/login").permitAll()
                 // 所有请求都需要认证
                 .anyRequest().authenticated()
