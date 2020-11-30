@@ -1,6 +1,6 @@
 package com.yuyue.thelife.webapp.jobsearch.rest;
 
-import com.yuyue.thelife.base.result.TheLifeResponse;
+import com.yuyue.thelife.base.result.JsonRestResponseVo;
 import com.yuyue.thelife.webapp.jobsearch.service.JobSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class JobSearchController {
     private JobSearchService jobSearchService;
 
     @GetMapping
-    public TheLifeResponse get() {
+    public JsonRestResponseVo get() {
 //        Object object = "获取找工作信息成功";
 //        return TheLifeResult.ok(object);
         return jobSearchService.get();

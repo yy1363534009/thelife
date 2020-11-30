@@ -1,6 +1,6 @@
 package com.yuyue.thelife.webapp.about.rest;
 
-import com.yuyue.thelife.base.result.TheLifeResponse;
+import com.yuyue.thelife.base.result.JsonRestResponseVo;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class AboutController {
 
     @GetMapping
-    public TheLifeResponse get() {
+    public JsonRestResponseVo get() {
         Object object = "获取用户信息成功";
-        return TheLifeResponse.Success(object);
+        return JsonRestResponseVo.Success(object);
     }
 
 }

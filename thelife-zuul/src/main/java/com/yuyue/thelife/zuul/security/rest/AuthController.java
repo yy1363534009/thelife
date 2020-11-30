@@ -1,6 +1,6 @@
 package com.yuyue.thelife.zuul.security.rest;
 
-import com.yuyue.thelife.base.result.TheLifeResponse;
+import com.yuyue.thelife.base.result.JsonRestResponseVo;
 import com.yuyue.thelife.base.wechat.request.WeChatAuthUserRequest;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     @PostMapping(value = "/login")
-    public TheLifeResponse login(@RequestBody WeChatAuthUserRequest weChatAuthUserRequest){
+    public JsonRestResponseVo login(@RequestBody WeChatAuthUserRequest weChatAuthUserRequest){
         System.out.println(weChatAuthUserRequest);
-        TheLifeResponse.Success(weChatAuthUserRequest);
-        return TheLifeResponse.Success("post注册成功");
+        JsonRestResponseVo.Success(weChatAuthUserRequest);
+        return JsonRestResponseVo.Success("post注册成功");
     }
 
     @GetMapping(value = "/login")
-    public TheLifeResponse login1(){
+    public JsonRestResponseVo login1(){
         System.out.println("/auth/login");
-        return TheLifeResponse.Success("get注册成功");
+        return JsonRestResponseVo.Success("get注册成功");
     }
 
 }
