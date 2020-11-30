@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/jobsearch")
-public class JobSearchRest {
+public class JobSearchController {
 
     @Autowired
     private JobSearchService jobSearchService;

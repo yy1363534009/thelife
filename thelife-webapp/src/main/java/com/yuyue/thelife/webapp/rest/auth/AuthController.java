@@ -1,17 +1,21 @@
-package com.yuyue.thelife.zuul.security.rest;
+package com.yuyue.thelife.webapp.rest.auth;
 
 import com.yuyue.thelife.base.result.TheLifeResponse;
 import com.yuyue.thelife.base.wechat.request.WeChatAuthUserRequest;
+import com.yuyue.thelife.webapp.service.auth.AuthService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @Description:
  * @Auther: yuyue
- * @create: 2020-11-24 22:50:20
+ * @create 2020/11/30 09:45
  */
 @RestController
 @RequestMapping(value = "/auth")
 public class AuthController {
+
+    @Autowired
+    private AuthService authService;
 
     @PostMapping(value = "/login")
     public TheLifeResponse login(@RequestBody WeChatAuthUserRequest weChatAuthUserRequest){
@@ -22,8 +26,8 @@ public class AuthController {
 
     @GetMapping(value = "/login")
     public TheLifeResponse login1(){
-        System.out.println("/auth/login");
-        return TheLifeResponse.ok("get注册成功");
+        System.out.println("thelife-webapp/auth/login");
+        return authService.login1();
     }
 
 }

@@ -18,43 +18,43 @@ eureka:
     preferIpAddress: true     #访问路径可以显示IP地址
 
 zuul: # 网关配置
-  host:
-    connect-timeout-millis: 15000 #HTTP连接超时要比Hystrix的大
-    socket-timeout-millis: 60000   #socket超时
+#  host:
+#    connect-timeout-millis: 15000 #HTTP连接超时要比Hystrix的大
+#    socket-timeout-millis: 60000   #socket超时
   sensitive-headers: null # 默认Zuul认为请求头中 "Cookie", "Set-Cookie", "Authorization" 是敏感信息，它不会转发请求，因为把它设置为空，就会转发了
   add-host-header: true # 正确的处理重定向操作
   routes:
-    thelife-zuul: # 路由名称，名称任意，保持所有路由名称唯一
-      path: /auth/** # 访问路径，转发到 auth-server 服务处理
-      serviceId: TheLife-Zuul # 指定服务ID，会自动从Eureka中找到此服务的ip和端口（网关进行权限控制）
-      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
+#    thelife-zuul: # 路由名称，名称任意，保持所有路由名称唯一
+#      path: /auth/** # 访问路径，转发到 auth-server 服务处理
+#      serviceId: TheLife-Zuul # 指定服务ID，会自动从Eureka中找到此服务的ip和端口（网关进行权限控制）
+#      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
     thelife-webapp:
-      path: /thelife-webapp/**
+      path: /thelife-webapp/**/**
       serviceId: TheLife-Webapp
       stripPrefix: false
-    thelife-server-jobsearch:
-      path: /jobsearch/**
-      serviceId: TheLife-Server-Jobsearch
-      stripPrefix: false
+#    thelife-server-jobsearch:
+#      path: /jobsearch/**
+#      serviceId: TheLife-Server-Jobsearch
+#      stripPrefix: false
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: SEMAPHORE
-          thread:
-            timeout-in-milliseconds: 6000 # 熔断超时时长：6000ms
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+#          thread:
+#            timeout-in-milliseconds: 60000 # 熔断超时时长：6000ms
 ### Ribbon 配置
-ribbon:
-  # http建立socket超时时间,毫秒
-  ConnectTimeout: 10000
-  # http读取响应socket超时时间
-  ReadTimeout: 10000
-  # 同一台实例最大重试次数,不包括首次调用
-  MaxAutoRetries: 0
-  # 重试负载均衡其他的实例最大重试次数,不包括首次server
-  MaxAutoRetriesNextServer: 2
-  # 是否所有操作都重试，POST请求注意多次提交错误。
-  # 默认false，设定为false的话，只有get请求会重试
-  OkToRetryOnAllOperations: true
+#ribbon:
+#  # http建立socket超时时间,毫秒
+#  ConnectTimeout: 10000
+#  # http读取响应socket超时时间
+#  ReadTimeout: 10000
+#  # 同一台实例最大重试次数,不包括首次调用
+#  MaxAutoRetries: 0
+#  # 重试负载均衡其他的实例最大重试次数,不包括首次server
+#  MaxAutoRetriesNextServer: 2
+#  # 是否所有操作都重试，POST请求注意多次提交错误。
+#  # 默认false，设定为false的话，只有get请求会重试
+#  OkToRetryOnAllOperations: true

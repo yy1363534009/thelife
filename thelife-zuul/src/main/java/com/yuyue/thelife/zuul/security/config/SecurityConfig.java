@@ -4,6 +4,7 @@ import com.yuyue.thelife.zuul.security.security.JwtAccessDeniedHandler;
 import com.yuyue.thelife.zuul.security.security.JwtAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,6 +25,7 @@ import javax.annotation.Resource;
  * @create: 2020-11-26 22:19:29
  */
 @EnableWebSecurity
+@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -58,6 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+//        http.authorizeRequests().anyRequest().permitAll();
         http
                 // 禁用 CSRF
                 .csrf().disable()
@@ -98,11 +101,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/druid/**").permitAll()
                 // 放行OPTIONS请求
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                // 自定义匿名访问所有url放行：允许匿名和带Token访问，细腻化到每个 Request 类型
-                // POST
-                .antMatchers(HttpMethod.POST, "/auth/login").permitAll()
+                //
+                .antMatchers("/auth/login").permitAll()
                 //微服务路径
                 .antMatchers("/thelife-webapp/about", "/thelife-webapp/jobsearch").permitAll()
+                .antMatchers("/thelife-webapp/auth/login").permitAll()
                 // 所有请求都需要认证
                 .anyRequest().authenticated()
         ;

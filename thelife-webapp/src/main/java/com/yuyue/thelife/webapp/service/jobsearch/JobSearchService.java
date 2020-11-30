@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface JobSearchService {
 
     @GetMapping(value = "/jobsearch")
-    public TheLifeResponse get();
+    TheLifeResponse get();
 
 }
