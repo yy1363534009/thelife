@@ -31,9 +31,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CorsFilter corsFilter;
 
-    @Resource(name = "userDetailsService")
-    private UserDetailsService userDetailsService;
-
     @Autowired
     private JwtAuthenticationEntryPoint authenticationErrorHandler;
 
@@ -46,10 +43,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }
 
     /**
      * 当前将所有请求放行,交给资源配置类进行资源权限判断
@@ -60,7 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().anyRequest().permitAll();
         http
                 // 禁用 CSRF
                 .csrf().disable()

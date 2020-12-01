@@ -3,6 +3,12 @@ package com.yuyue.thelife.gateway.security.rest;
 import com.yuyue.thelife.base.result.JsonRestResponseVo;
 import com.yuyue.thelife.base.security.dto.AuthUserDto;
 import com.yuyue.thelife.base.wechat.request.WeChatAuthUserRequest;
+import com.yuyue.thelife.gateway.security.dto.JwtUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -14,10 +20,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/auth")
 public class AuthController {
 
+    @Autowired
+    private AuthenticationManagerBuilder authenticationManagerBuilder;
+
     @PostMapping(value = "/login")
     public JsonRestResponseVo login(@RequestBody AuthUserDto authUserDto) {
         System.out.println("zuul/auth/login:" + authUserDto);
-        return JsonRestResponseVo.Success("zuul/auth/login:" + authUserDto.toString());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authUserDto.getUsername(), authUserDto.getPassword());
+        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
+        return JsonRestResponseVo.Success(jwtUser);
     }
 
     @PostMapping(value = "/wechat/login")
