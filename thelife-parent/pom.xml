@@ -7,9 +7,9 @@
     <groupId>com.yuyue.thelife</groupId>
     <artifactId>thelife-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>父级项目</name>
+    <name>农民生活</name>
     <modules>
-        <module>../thelife-zuul</module>
+        <module>../thelife-gateway</module>
         <module>../thelife-eureka</module>
         <module>../thelife-webapp</module>
         <module>../thelife-base</module>

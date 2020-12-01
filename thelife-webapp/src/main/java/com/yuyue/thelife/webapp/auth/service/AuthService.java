@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @Auther: yuyue
  * @create 2020/11/30 09:48
  */
-@FeignClient(name = "TheLife-Zuul")
+@FeignClient(name = "TheLife-Gateway")
 public interface AuthService {
 
     @PostMapping(value = "/auth/login")
