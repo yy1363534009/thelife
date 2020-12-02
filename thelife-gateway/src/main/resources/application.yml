@@ -1,5 +1,7 @@
 server:
   port: 80
+  servlet:
+    context-path: /thelife-webapp
 
 spring:
   #项目名(不可随意改变)
@@ -25,7 +27,7 @@ eureka:
     registerWithEureka: true # 服务注册开关
     fetchRegistry: true # 服务发现开关
     serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      defaultZone: http://localhost:9001/eureka
+      defaultZone: http://localhost:7000/eureka
   instance:
     instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
     preferIpAddress: true     #访问路径可以显示IP地址
@@ -41,14 +43,14 @@ zuul: # 网关配置
 #      path: /auth/** # 访问路径，转发到 auth-server 服务处理
 #      serviceId: TheLife-Gateway # 指定服务ID，会自动从Eureka中找到此服务的ip和端口（网关进行权限控制）
 #      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
-    thelife-webapp:
-      path: /thelife-webapp/**/**
-      serviceId: TheLife-Webapp
+    thelife-server-jobsearch:
+      path: /jobsearch/**
+      serviceId: TheLife-Server-Jobsearch
       stripPrefix: false
-#    thelife-server-jobsearch:
-#      path: /jobsearch/**
-#      serviceId: TheLife-Server-Jobsearch
-#      stripPrefix: false
+    thelife-server-about:
+      path: /about/**
+      serviceId: TheLife-Server-About
+      stripPrefix: false
 
 #hystrix:
   command:

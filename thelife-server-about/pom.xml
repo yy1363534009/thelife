@@ -10,8 +10,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>thelife-webapp</artifactId>
-    <name>前后端对接服务</name>
+    <artifactId>thelife-server-about</artifactId>
+    <name>关于我为服务</name>
 
     <dependencies>
         <dependency>

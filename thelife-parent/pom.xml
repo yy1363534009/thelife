@@ -11,7 +11,7 @@
     <modules>
         <module>../thelife-gateway</module>
         <module>../thelife-eureka</module>
-        <module>../thelife-webapp</module>
+        <module>../thelife-server-about</module>
         <module>../thelife-base</module>
         <module>../thelife-server-jobsearch</module>
     </modules>

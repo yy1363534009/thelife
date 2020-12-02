@@ -13,11 +13,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients(basePackages = "com.yuyue.thelife")
-public class TheLifeWebappAppRun {
+@EnableFeignClients(basePackages = "com.yuyue.thelife")//开通Feign http接口调用服务
+public class TheLifeAboutAppRun {
 
     public static void main(String[] args) {
-        SpringApplication.run(TheLifeWebappAppRun.class, args);
+        SpringApplication.run(TheLifeAboutAppRun.class, args);
     }
 
 }
