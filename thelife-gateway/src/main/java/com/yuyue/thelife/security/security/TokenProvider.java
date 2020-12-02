@@ -39,11 +39,14 @@ public class TokenProvider implements InitializingBean {
 
     @Autowired
     private SecurityProperties properties;
+
     @Autowired
-    private  RedisUtils redisUtils;
+    private RedisUtils redisUtils;
 
     public static final String AUTHORITIES_KEY = "auth";
+
     private JwtParser jwtParser;
+
     private JwtBuilder jwtBuilder;
 
     @Override
@@ -122,14 +125,21 @@ public class TokenProvider implements InitializingBean {
         }
     }
 
+    /**
+     * 检查token
+     * @param authToken
+     * @return
+     */
+    public boolean validateToken(String authToken){
+        return true;
+    }
+
     public String getToken(HttpServletRequest request) {
         final String requestHeader = request.getHeader(properties.getHeader());
         if (requestHeader != null && requestHeader.startsWith(properties.getTokenStartWith())) {
-            return requestHeader.substring(7);
+            return requestHeader.substring(properties.getTokenStartWith().length());
         }
         return null;
     }
-
-
 
 }

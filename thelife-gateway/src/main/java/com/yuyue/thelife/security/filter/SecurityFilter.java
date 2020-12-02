@@ -73,9 +73,9 @@ public class SecurityFilter extends ZuulFilter {
         RequestContext context = RequestContext.getCurrentContext();
 
         HttpServletRequest request = context.getRequest();
-        System.out.println("zuul拦截请求：[" + request.getMethod() + "]" + request.getRequestURL());
+        System.out.println("ZuulFilter拦截请求：[" + request.getMethod() + "]" + request.getRequestURL());
         String token = resolveToken(request);
-        System.out.println("请求头token：" + token);
+        System.out.println("ZuulFilter请求头token：" + token);
         // 对于 Token 为空的不需要去查 Redis
         if (StrUtil.isNotBlank(token)) {
 
