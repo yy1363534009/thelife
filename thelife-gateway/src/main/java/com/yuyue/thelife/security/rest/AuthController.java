@@ -1,6 +1,7 @@
 package com.yuyue.thelife.security.rest;
 
 import com.yuyue.thelife.result.JsonRestResponseVo;
+import com.yuyue.thelife.security.config.bean.SecurityProperties;
 import com.yuyue.thelife.security.dto.AuthUserDto;
 import com.yuyue.thelife.security.dto.JwtUser;
 import com.yuyue.thelife.security.security.TokenProvider;
@@ -30,25 +31,31 @@ public class AuthController {
     @Autowired
     private TokenProvider tokenProvider;
 
+    @Autowired
+    private SecurityProperties properties;
+
     @PostMapping(value = "/login")
     public JsonRestResponseVo login(@RequestBody AuthUserDto authUserDto) {
-        System.out.println("zuul/auth/login:" + authUserDto);
+        // 构建未认证token令牌
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(authUserDto.getUsername(), authUserDto.getPassword());
+        // 未认证token令牌交给AuthenticationManager，通过自定义UserDetailsServiceImpl完成认证
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
+        // 将认证传递给Security上下文
         SecurityContextHolder.getContext().setAuthentication(authentication);
+        // 获取用户信息
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
+        // 构建jwt令牌
         String token = tokenProvider.createToken(authentication);
+        // 封装返回信息
         Map<String, Object> result = new HashMap<String, Object>();
-        result.put("token", token);
+        result.put("token", properties.getTokenStartWith() + token);
         result.put("user", jwtUser);
         return JsonRestResponseVo.Success(result);
     }
 
     @PostMapping(value = "/wechat/login")
     public JsonRestResponseVo wechatLogin(@RequestBody WeChatAuthUserRequest weChatAuthUserRequest) {
-        System.out.println(weChatAuthUserRequest);
-        JsonRestResponseVo.Success(weChatAuthUserRequest);
-        return JsonRestResponseVo.Success("post注册成功");
+        return JsonRestResponseVo.Success();
     }
 
 }
