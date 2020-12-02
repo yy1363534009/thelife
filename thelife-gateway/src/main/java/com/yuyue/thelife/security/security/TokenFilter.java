@@ -1,10 +1,7 @@
 package com.yuyue.thelife.security.security;
 
-import com.yuyue.thelife.security.dto.JwtUser;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 
@@ -36,8 +33,7 @@ public class TokenFilter extends GenericFilterBean {
         if (StringUtils.hasText(token) && tokenProvider.validateToken(token)) {
             Authentication authentication = tokenProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-            System.out.println("TokenFilter完成认证，当前用户：" + userDetails.getUsername());
+            System.out.println("TokenFilter完成认证，当前用户：" + authentication.getName());
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }
