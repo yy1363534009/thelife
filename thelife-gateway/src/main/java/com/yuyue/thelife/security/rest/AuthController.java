@@ -1,7 +1,7 @@
 package com.yuyue.thelife.security.rest;
 
 import com.yuyue.thelife.result.JsonRestResponseVo;
-import com.yuyue.thelife.security.config.bean.SecurityProperties;
+import com.yuyue.thelife.security.config.SecurityProperties;
 import com.yuyue.thelife.security.dto.AuthUserDto;
 import com.yuyue.thelife.security.dto.JwtUser;
 import com.yuyue.thelife.security.security.TokenProvider;

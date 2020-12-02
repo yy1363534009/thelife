@@ -1,6 +1,5 @@
 package com.yuyue.thelife.security.config;
 
-import com.yuyue.thelife.security.config.bean.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

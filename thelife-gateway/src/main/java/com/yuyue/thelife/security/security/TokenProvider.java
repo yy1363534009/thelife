@@ -4,7 +4,7 @@ import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
-import com.yuyue.thelife.security.config.bean.SecurityProperties;
+import com.yuyue.thelife.security.config.SecurityProperties;
 import com.yuyue.thelife.utils.RedisUtils;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

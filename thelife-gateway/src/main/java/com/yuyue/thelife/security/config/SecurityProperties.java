@@ -1,6 +1,8 @@
-package com.yuyue.thelife.security.config.bean;
+package com.yuyue.thelife.security.config;
 
 import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @Description:
@@ -8,6 +10,8 @@ import lombok.Data;
  * @create: 2020-11-25 23:30:33
  */
 @Data
+@Configuration
+@ConfigurationProperties(prefix = "jwt", ignoreUnknownFields = true)
 public class SecurityProperties {
 
     /**
