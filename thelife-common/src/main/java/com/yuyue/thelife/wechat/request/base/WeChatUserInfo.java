@@ -1,4 +1,4 @@
-package com.yuyue.thelife.wechat.request.common;
+package com.yuyue.thelife.wechat.request.base;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.yuyue.thelife.security.filter;
+package com.yuyue.thelife.gateway.filter;
 
 import cn.hutool.core.util.StrUtil;
 import com.netflix.zuul.ZuulFilter;

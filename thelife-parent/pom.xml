@@ -7,12 +7,12 @@
     <groupId>com.yuyue.thelife</groupId>
     <artifactId>thelife-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>农民生活</name>
+    <name>TheLife-农民生活系统</name>
     <modules>
         <module>../thelife-gateway</module>
         <module>../thelife-eureka</module>
         <module>../thelife-server-about</module>
-        <module>../thelife-base</module>
+        <module>../thelife-common</module>
         <module>../thelife-server-jobsearch</module>
     </modules>
     <!--修改打包方式-->
@@ -109,13 +109,6 @@
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
-
-            <!--spring-security-oauth2、spring-security-jwt等-->
-            <!--<dependency>
-                <groupId>org.springframework.security.oauth.boot</groupId>
-                <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-                <version>${oauth2-autoconfigure.version}</version>
-            </dependency>-->
 
             <!-- kaptcha 用于图形验证码 -->
             <dependency>

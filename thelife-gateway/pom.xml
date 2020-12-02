@@ -11,13 +11,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thelife-gateway</artifactId>
-    <name>网关认证服务</name>
+    <name>服务-网关+认证授权</name>
 
     <dependencies>
         <!--基础模块-->
         <dependency>
             <groupId>com.yuyue.thelife</groupId>
-            <artifactId>thelife-base</artifactId>
+            <artifactId>thelife-common</artifactId>
             <version>${thelife.version}</version>
         </dependency>
 

@@ -11,12 +11,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thelife-eureka</artifactId>
-    <name>注册中心服务</name>
+    <name>服务-注册中心</name>
 
     <dependencies>
         <dependency>
             <groupId>com.yuyue.thelife</groupId>
-            <artifactId>thelife-base</artifactId>
+            <artifactId>thelife-common</artifactId>
             <version>${thelife.version}</version>
         </dependency>
         <!-- 导入Eureka-server 服务端依赖 -->

@@ -11,12 +11,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thelife-server-about</artifactId>
-    <name>关于我为服务</name>
+    <name>服务-关于我</name>
 
     <dependencies>
         <dependency>
             <groupId>com.yuyue.thelife</groupId>
-            <artifactId>thelife-base</artifactId>
+            <artifactId>thelife-common</artifactId>
             <version>${thelife.version}</version>
         </dependency>
         <!--eureka客户端依赖-->

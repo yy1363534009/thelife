@@ -29,3 +29,7 @@ eureka:
 feign:
   hystrix:
     enabled: true # 开启服务熔断器
+
+#是否开启 swagger-ui
+swagger:
+  enabled: true

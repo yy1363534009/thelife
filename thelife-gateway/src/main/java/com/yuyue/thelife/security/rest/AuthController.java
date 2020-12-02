@@ -6,6 +6,8 @@ import com.yuyue.thelife.security.dto.AuthUserDto;
 import com.yuyue.thelife.security.dto.JwtUser;
 import com.yuyue.thelife.security.security.TokenProvider;
 import com.yuyue.thelife.wechat.request.WeChatAuthUserRequest;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -21,6 +23,7 @@ import java.util.Map;
  * @Auther: yuyue
  * @create: 2020-11-24 22:50:20
  */
+@Api(tags = "系统：系统认证授权接口")
 @RestController
 @RequestMapping(value = "/auth")
 public class AuthController {
@@ -34,6 +37,7 @@ public class AuthController {
     @Autowired
     private SecurityProperties properties;
 
+    @ApiOperation(value = "登录授权", notes = "登录授权")
     @PostMapping(value = "/login")
     public JsonRestResponseVo login(@RequestBody AuthUserDto authUserDto) {
         // 构建未认证token令牌
