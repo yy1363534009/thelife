@@ -32,3 +32,6 @@ eureka:
 #是否开启 swagger-ui
 swagger:
   enabled: true
+
+mybatis-plus:
+  type-enums-package: com.yuyue.thelife.enums

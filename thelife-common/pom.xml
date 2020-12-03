@@ -145,6 +145,13 @@
             <artifactId>swagger-models</artifactId>
         </dependency>
 
+        <!--mybatis-plus启动器-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+
 
     </dependencies>
 
