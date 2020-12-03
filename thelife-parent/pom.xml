@@ -103,12 +103,6 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-            <!--druid连接池-->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
 
             <!-- kaptcha 用于图形验证码 -->
             <dependency>
@@ -169,25 +163,6 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
-            </dependency>
-
-            <!--Mysql依赖包-->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <scope>runtime</scope>
-            </dependency>
-
-            <!-- druid数据源驱动 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.lionsoul</groupId>
-                <artifactId>ip2region</artifactId>
-                <version>1.7.2</version>
             </dependency>
 
             <!-- excel工具 -->

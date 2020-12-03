@@ -1,7 +1,7 @@
-package com.yuyue.thelife.service.fallback;
+package com.yuyue.thelife.service.api.fallback;
 
 import com.yuyue.thelife.result.JsonRestResponseVo;
-import com.yuyue.thelife.service.AboutService;
+import com.yuyue.thelife.service.api.UserServiceApi;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @create 2020/12/2 17:21
  */
 @Component
-public class AboutServiceFallBack implements AboutService {
+public class UserServiceApiFallBack implements UserServiceApi {
 
     @Override
     public JsonRestResponseVo getJobsearch() {

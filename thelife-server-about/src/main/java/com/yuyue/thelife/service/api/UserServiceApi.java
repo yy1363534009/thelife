@@ -1,4 +1,4 @@
-package com.yuyue.thelife.service;
+package com.yuyue.thelife.service.api;
 
 import com.yuyue.thelife.config.FeignConfig;
 import com.yuyue.thelife.result.JsonRestResponseVo;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 //@FeignClient(name = "TheLife-Server-Jobsearch", configuration = FeignConfig.class, fallback = AboutServiceFallBack.class)
 @FeignClient(name = "TheLife-Server-Jobsearch", configuration = FeignConfig.class)
-public interface AboutService {
+public interface UserServiceApi {
 
     @GetMapping(value = "/jobsearch")
     JsonRestResponseVo getJobsearch();
