@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-23 22:46:19
  */
 @RestController

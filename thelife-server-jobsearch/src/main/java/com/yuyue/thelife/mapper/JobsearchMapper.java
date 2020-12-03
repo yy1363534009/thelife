@@ -5,7 +5,7 @@ import com.yuyue.thelife.model.JobSearch;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 15:17
  */
 @Repository

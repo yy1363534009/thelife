@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-23 23:42:16
  */
 @Api(tags = "服务：找活接口")

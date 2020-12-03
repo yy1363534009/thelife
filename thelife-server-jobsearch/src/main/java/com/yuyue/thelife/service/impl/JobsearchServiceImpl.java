@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 15:13
  */
 @Service("jobsearchService")

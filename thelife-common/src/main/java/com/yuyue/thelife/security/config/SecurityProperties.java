@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-25 23:30:33
  */
 @Data

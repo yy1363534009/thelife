@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 15:47
  */
 public class BaseDto implements Serializable {

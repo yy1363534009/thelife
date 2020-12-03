@@ -18,7 +18,7 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-26 22:19:29
  */
 @EnableWebSecurity

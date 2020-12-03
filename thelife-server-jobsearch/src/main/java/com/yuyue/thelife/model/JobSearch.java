@@ -8,7 +8,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 15:24
  */
 @Data

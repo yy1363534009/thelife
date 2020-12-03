@@ -9,7 +9,7 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * @Description: 网关服务配置
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-25 23:20:01
  */
 @Configuration

@@ -3,7 +3,7 @@ package com.yuyue.thelife.service;
 import java.util.List;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 15:10
  */
 public interface JobsearchService {

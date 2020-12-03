@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-24 23:21:30
  */
 @Data

@@ -5,7 +5,7 @@ import com.yuyue.thelife.service.AboutService;
 import org.springframework.stereotype.Component;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/2 17:21
  */
 @Component

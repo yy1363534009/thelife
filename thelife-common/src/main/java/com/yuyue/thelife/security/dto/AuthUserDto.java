@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-29 15:10:27
  */
 @Data

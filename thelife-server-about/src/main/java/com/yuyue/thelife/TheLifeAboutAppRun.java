@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @Description: rest接口启动器
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-23 22:36:44
  */
 @SpringBootApplication

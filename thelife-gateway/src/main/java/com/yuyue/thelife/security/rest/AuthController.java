@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-24 22:50:20
  */
 @Api(tags = "系统：系统认证授权接口")

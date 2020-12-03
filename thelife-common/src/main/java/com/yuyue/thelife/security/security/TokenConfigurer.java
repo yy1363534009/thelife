@@ -7,7 +7,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 /**
  * @Description:
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-30 22:03:01
  */
 public class TokenConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {

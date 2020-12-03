@@ -13,7 +13,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 10:13
  */
 @Configuration

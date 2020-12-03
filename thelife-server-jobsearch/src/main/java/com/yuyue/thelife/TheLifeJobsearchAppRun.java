@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Description: 【找活】服务启动器
- * @Auther: yuyue
+ * @author: yuyue
  * @create: 2020-11-23 23:39:29
  */
 @SpringBootApplication

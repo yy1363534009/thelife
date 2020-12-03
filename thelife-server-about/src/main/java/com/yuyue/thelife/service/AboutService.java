@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/11/30 11:34
  */
 //@FeignClient(name = "TheLife-Server-Jobsearch", configuration = FeignConfig.class, fallback = AboutServiceFallBack.class)

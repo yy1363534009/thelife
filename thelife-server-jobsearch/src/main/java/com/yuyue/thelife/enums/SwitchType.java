@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.yuyue.thelife.base.enums.ConverTableEnum;
 
 /**
- * @Auther: yuyue
+ * @author: yuyue
  * @create 2020/12/3 15:32
  */
 public enum SwitchType implements ConverTableEnum<SwitchType, Integer> {
