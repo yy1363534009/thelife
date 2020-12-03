@@ -1,5 +1,7 @@
 package com.yuyue.thelife.security.security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
@@ -19,6 +21,8 @@ import java.io.IOException;
  */
 public class TokenFilter extends GenericFilterBean {
 
+    private static final Logger logger = LoggerFactory.getLogger(TokenProvider.class);
+
     private TokenProvider tokenProvider;
 
     public TokenFilter(TokenProvider tokenProvider) {
@@ -27,14 +31,16 @@ public class TokenFilter extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        logger.info("服务-校验[token]开始");
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         String token = tokenProvider.getToken(httpServletRequest);
-        System.out.println("TokenFilter当前token：" + token);
+        logger.info("TokenFilter->token=[" + token + "]");
         if (StringUtils.hasText(token) && tokenProvider.validateToken(token)) {
             Authentication authentication = tokenProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            System.out.println("TokenFilter完成认证，当前用户：" + authentication.getName());
+            logger.info("用户[" + authentication.getName() + "]完成认证");
         }
+        logger.info("服务-校验[token]结束");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

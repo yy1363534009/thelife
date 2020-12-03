@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: TheLife-Server-Jobsearch
+  # 多环境配置：当前环境
+  profiles:
+    active: dev
 
   #redis配置
   redis:

@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: TheLife-Server-About
+  profiles:
+    active: dev
 
   #redis配置
   redis:
@@ -29,6 +31,14 @@ eureka:
 feign:
   hystrix:
     enabled: true # 开启服务熔断器
+
+#Hystrix有隔离策略：SEMAPHORE 防止向其他服务传递token获取不到请求对象RequestContextHolder
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE #Hystrix有隔离策略：THREAD（默认）以及SEMAPHORE，THREAD时使用该隔离策略防止RequestContextHolder对象中不可用（隔离策略为THREAD时是没办法拿到ThreadLocal中的值）
 
 #是否开启 swagger-ui
 swagger:

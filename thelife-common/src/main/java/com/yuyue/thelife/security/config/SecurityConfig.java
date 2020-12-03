@@ -24,21 +24,36 @@ import org.springframework.web.filter.CorsFilter;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /**
+     * 跨域
+     */
     @Autowired
     private CorsFilter corsFilter;
 
+    /**
+     * 未认证处理
+     */
     @Autowired
     private JwtAuthenticationEntryPoint authenticationErrorHandler;
 
+    /**
+     * 未授权处理
+     */
     @Autowired
     private JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
+    /**
+     * token工具
+     */
     @Autowired
     private TokenProvider tokenProvider;
 
+    /**
+     * 密码加密方式
+     * @return
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
-        // 密码加密方式
         return new BCryptPasswordEncoder();
     }
 
