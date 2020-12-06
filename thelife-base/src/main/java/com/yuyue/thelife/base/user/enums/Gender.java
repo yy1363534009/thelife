@@ -1,38 +1,43 @@
-package com.yuyue.thelife.enums;
+package com.yuyue.thelife.base.user.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.yuyue.thelife.base.enums.ConverTableEnum;
+import com.yuyue.thelife.base.base.enums.ConverTableEnum;
 
 /**
- * @author: yuyue
- * @create 2020/12/3 15:32
+ * @Author: yuyue
+ * @Date: 2020/12/6 21:10
+ * @Description: 性别
  */
-public enum SwitchType implements ConverTableEnum<SwitchType, Integer> {
-
-    OFF(0, "关闭"),
-    ON(1, "开启");
+public enum Gender implements ConverTableEnum<Gender, Integer> {
+    //
+    unknown(0, "未知"),
+    MEN(1, "男"),
+    WOMEN(2, "女"),
+    ;
 
     @EnumValue
     private Integer code;
 
     private String description;
 
-    SwitchType(Integer code, String description) {
+
+    Gender(Integer code, String description) {
         this.code = code;
         this.description = description;
     }
 
-    public SwitchType getBycode(Integer code) {
+    public Gender getBycode(Integer code) {
         if (code == null) {
             return null;
         }
-        for (SwitchType t : values()) {
+        for (Gender t : values()) {
             if (t.getCode().equals(code)) {
                 return t;
             }
         }
         return null;
     }
+
 
     @Override
     public Integer getCode() {
@@ -44,8 +49,7 @@ public enum SwitchType implements ConverTableEnum<SwitchType, Integer> {
     }
 
     @Override
-    public SwitchType returnEnum(Integer code) {
+    public Gender returnEnum(Integer var1) {
         return getBycode(code);
     }
-
 }

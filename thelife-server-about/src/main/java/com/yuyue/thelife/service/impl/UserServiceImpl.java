@@ -1,7 +1,7 @@
 package com.yuyue.thelife.service.impl;
 
-import com.yuyue.thelife.mapper.UserMapper;
-import com.yuyue.thelife.model.User;
+import com.yuyue.thelife.base.about.mapper.UserMapper;
+import com.yuyue.thelife.base.about.moduls.User;
 import com.yuyue.thelife.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

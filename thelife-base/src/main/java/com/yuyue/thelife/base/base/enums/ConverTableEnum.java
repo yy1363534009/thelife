@@ -1,4 +1,4 @@
-package com.yuyue.thelife.base.enums;
+package com.yuyue.thelife.base.base.enums;
 
 import java.io.Serializable;
 

@@ -14,10 +14,17 @@
     <name>服务-网关+认证授权</name>
 
     <dependencies>
-        <!--基础模块-->
+        <!--thelife工具包-->
         <dependency>
             <groupId>com.yuyue.thelife</groupId>
             <artifactId>thelife-common</artifactId>
+            <version>${thelife.version}</version>
+        </dependency>
+
+        <!--基础模块dao-->
+        <dependency>
+            <groupId>com.yuyue.thelife</groupId>
+            <artifactId>thelife-base</artifactId>
             <version>${thelife.version}</version>
         </dependency>
 

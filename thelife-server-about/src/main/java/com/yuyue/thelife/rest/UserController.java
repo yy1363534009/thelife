@@ -1,14 +1,17 @@
 package com.yuyue.thelife.rest;
 
-import com.yuyue.thelife.enums.Type;
-import com.yuyue.thelife.model.User;
+import com.yuyue.thelife.base.about.enums.Type;
+import com.yuyue.thelife.base.about.moduls.User;
 import com.yuyue.thelife.result.JsonRestResponseVo;
 import com.yuyue.thelife.service.UserService;
 import com.yuyue.thelife.service.api.UserServiceApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 

@@ -1,6 +1,7 @@
 package com.yuyue.thelife.service;
 
-import com.yuyue.thelife.model.User;
+
+import com.yuyue.thelife.base.about.moduls.User;
 
 /**
  * @Author: yuyue

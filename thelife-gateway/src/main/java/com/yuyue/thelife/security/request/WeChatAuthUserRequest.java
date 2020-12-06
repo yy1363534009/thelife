@@ -1,6 +1,6 @@
-package com.yuyue.thelife.wechat.request;
+package com.yuyue.thelife.security.request;
 
-import com.yuyue.thelife.wechat.request.base.WeChatUserInfo;
+import com.yuyue.thelife.security.request.base.WeChatUserInfo;
 import lombok.Data;
 
 /**

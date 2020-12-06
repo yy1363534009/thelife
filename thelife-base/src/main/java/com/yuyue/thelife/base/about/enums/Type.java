@@ -1,7 +1,7 @@
-package com.yuyue.thelife.enums;
+package com.yuyue.thelife.base.about.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.yuyue.thelife.base.enums.ConverTableEnum;
+import com.yuyue.thelife.base.base.enums.ConverTableEnum;
 
 /**
  * @Author: yuyue
@@ -10,6 +10,7 @@ import com.yuyue.thelife.base.enums.ConverTableEnum;
  */
 public enum Type implements ConverTableEnum<Type, Integer> {
 
+    //
     PC(0, "PC端"),
     WECHAT(1, "微信小程序");
 

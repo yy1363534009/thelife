@@ -1,4 +1,4 @@
-package com.yuyue.thelife.wechat.request.base;
+package com.yuyue.thelife.security.request.base;
 
 import lombok.Data;
 
@@ -16,7 +16,7 @@ public class WeChatUserInfo {
     private String nickName;
 
     /**
-     * 性别 例：1→男，
+     * 性别 例：0：未知、1：男、2：女
      */
     private Integer gender;
 

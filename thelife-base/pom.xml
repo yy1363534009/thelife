@@ -10,29 +10,29 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>thelife-server-about</artifactId>
-    <name>服务-关于我</name>
+    <artifactId>thelife-base</artifactId>
+    <name>数据持久层</name>
 
     <dependencies>
-        <!--thelife工具包-->
+        <!--lombok插件-->
         <dependency>
-            <groupId>com.yuyue.thelife</groupId>
-            <artifactId>thelife-common</artifactId>
-            <version>${thelife.version}</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
-        <!--基础模块dao-->
+        <!-- 工具类依赖 -->
         <dependency>
-            <groupId>com.yuyue.thelife</groupId>
-            <artifactId>thelife-base</artifactId>
-            <version>${thelife.version}</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
 
-        <!--feign 依赖 起步依赖已经进入了hystrix坐标-->
+        <!--mybatis-plus启动器-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
     </dependencies>
+
+
 </project>

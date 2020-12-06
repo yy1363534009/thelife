@@ -1,9 +1,7 @@
-package com.yuyue.thelife.model;
+package com.yuyue.thelife.base.about.moduls;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.yuyue.thelife.base.dto.BaseDto;
-import com.yuyue.thelife.enums.SwitchType;
-import com.yuyue.thelife.enums.Type;
+import com.yuyue.thelife.base.about.enums.Type;
 import lombok.Data;
 
 import java.io.Serializable;

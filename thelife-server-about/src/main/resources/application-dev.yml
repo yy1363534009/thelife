@@ -4,7 +4,7 @@ spring:
     druid:
       db-type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      url: jdbc:log4jdbc:mysql://47.104.107.189:33306/springcloud_db01?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+      url: jdbc:log4jdbc:mysql://47.104.107.189:33306/thelife?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: yuyue520
       # 初始连接数
@@ -67,4 +67,4 @@ swagger:
   enabled: true
 
 mybatis-plus:
-  type-enums-package: com.yuyue.thelife.enums
+  type-enums-package: com.yuyue.thelife.base.about.enums
