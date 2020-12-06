@@ -1,13 +1,13 @@
 package com.yuyue.thelife.rest;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.yuyue.thelife.enums.Type;
 import com.yuyue.thelife.model.User;
 import com.yuyue.thelife.result.JsonRestResponseVo;
 import com.yuyue.thelife.service.UserService;
 import com.yuyue.thelife.service.api.UserServiceApi;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -20,6 +20,8 @@ import java.util.Date;
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserServiceApi userServiceApi;
@@ -35,7 +37,7 @@ public class UserController {
 
     @GetMapping(value = "/jobsearch")
     public JsonRestResponseVo getJobsearch() {
-        System.out.println("/about/jobsearch");
+        logger.info("/about/jobsearch");
         return userServiceApi.getJobsearch();
     }
 

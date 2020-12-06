@@ -19,9 +19,9 @@ import javax.servlet.http.HttpServletRequest;
  * @create: 2020-11-25 23:03:36
  */
 @Component
-public class SecurityFilter extends ZuulFilter {
+public class GatewayFilter extends ZuulFilter {
 
-    private static final Logger log = LoggerFactory.getLogger(SecurityFilter.class);
+    private static final Logger logger = LoggerFactory.getLogger(GatewayFilter.class);
 
     @Autowired
     private SecurityProperties properties;
@@ -69,35 +69,14 @@ public class SecurityFilter extends ZuulFilter {
      */
     @Override
     public Object run() throws ZuulException {
-        //1.zuul提供获取请求上下文
+        logger.info("【GateFilter过滤器】开始");
+        // 获取zuul提供获取请求上下文
         RequestContext context = RequestContext.getCurrentContext();
-
         HttpServletRequest request = context.getRequest();
-        System.out.println("ZuulFilter拦截请求：[" + request.getMethod() + "]" + request.getRequestURL());
-        String token = resolveToken(request);
-        System.out.println("ZuulFilter请求头token：" + token);
-        // 对于 Token 为空的不需要去查 Redis
-        if (StrUtil.isNotBlank(token)) {
-
-        }
+        logger.info("请求：method=[" + request.getMethod() + "],url=[" + request.getRequestURL() + "]");
+        logger.info("【GateFilter过滤器】结束");
         return null;
     }
 
-    /**
-     * 初步检测Token
-     *
-     * @param request /
-     * @return /
-     */
-    private String resolveToken(HttpServletRequest request) {
-        String bearerToken = request.getHeader(properties.getHeader());
-        if (StringUtils.hasText(bearerToken) && bearerToken.startsWith(properties.getTokenStartWith())) {
-            // 去掉令牌前缀
-            return bearerToken.replace(properties.getTokenStartWith(), "");
-        } else {
-            log.debug("非法Token：{}", bearerToken);
-        }
-        return null;
-    }
 
 }
