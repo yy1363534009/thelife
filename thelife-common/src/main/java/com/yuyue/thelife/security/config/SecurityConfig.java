@@ -108,7 +108,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 //security登录接口
                 .antMatchers("/auth/login").permitAll()
-                .antMatchers("/thelife-webapp/auth/login").permitAll()
                 // 所有请求都需要认证
                 .anyRequest().authenticated()
                 .and().apply(new TokenConfigurer(tokenProvider))
