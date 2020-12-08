@@ -1,7 +1,7 @@
-package com.yuyue.thelife.base.user.moduls;
+package com.yuyue.thelife.security.model;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.yuyue.thelife.base.user.enums.LoginMethod;
+import com.yuyue.thelife.security.service.enums.LoginMethod;
 import lombok.Data;
 
 import java.util.Date;

@@ -21,13 +21,6 @@
             <version>${thelife.version}</version>
         </dependency>
 
-        <!--基础模块dao-->
-        <dependency>
-            <groupId>com.yuyue.thelife</groupId>
-            <artifactId>thelife-base</artifactId>
-            <version>${thelife.version}</version>
-        </dependency>
-
         <!--zuul路由网关依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

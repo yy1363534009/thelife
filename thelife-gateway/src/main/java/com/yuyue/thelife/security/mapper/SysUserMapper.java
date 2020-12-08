@@ -1,7 +1,7 @@
-package com.yuyue.thelife.base.user.mapper;
+package com.yuyue.thelife.security.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.yuyue.thelife.base.user.moduls.SysUser;
+import com.yuyue.thelife.security.model.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

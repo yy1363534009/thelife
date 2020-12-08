@@ -14,7 +14,6 @@
         <module>../thelife-server-about</module>
         <module>../thelife-common</module>
         <module>../thelife-server-jobsearch</module>
-        <module>../thelife-base</module>
     </modules>
     <!--修改打包方式-->
     <packaging>pom</packaging>

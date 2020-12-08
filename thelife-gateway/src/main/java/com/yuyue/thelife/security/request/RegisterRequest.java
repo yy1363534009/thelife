@@ -1,6 +1,6 @@
 package com.yuyue.thelife.security.request;
 
-import com.yuyue.thelife.base.user.enums.LoginMethod;
+import com.yuyue.thelife.security.service.enums.LoginMethod;
 import lombok.Data;
 
 /**

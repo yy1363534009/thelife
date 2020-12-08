@@ -1,7 +1,7 @@
-package com.yuyue.thelife.base.about.enums;
+package com.yuyue.thelife.service.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.yuyue.thelife.base.base.enums.ConverTableEnum;
+import com.yuyue.thelife.base.enums.ConverTableEnum;
 
 /**
  * @Author: yuyue

@@ -10,3 +10,10 @@ springcloud-theLife
     TheLife-Server-About：9000
     TheLife-Server-Jobsearch：9010
     
+    
+调用流程：
+  controller → service → dao → mapper
+    controller：rest层
+    service：业务层
+    dao：数据交互层（数据封装，加缓存等）
+    mapper：数据持久化层

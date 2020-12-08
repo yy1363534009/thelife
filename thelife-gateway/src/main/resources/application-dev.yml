@@ -67,4 +67,4 @@ swagger:
   enabled: true
 
 mybatis-plus:
-  type-enums-package: com.yuyue.thelife.base.user.enums
+  type-enums-package: com.yuyue.thelife.security.service.enums

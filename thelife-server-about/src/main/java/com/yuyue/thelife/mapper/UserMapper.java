@@ -1,7 +1,7 @@
-package com.yuyue.thelife.base.about.mapper;
+package com.yuyue.thelife.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.yuyue.thelife.base.about.moduls.User;
+import com.yuyue.thelife.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
