@@ -1,4 +1,4 @@
-package com.yuyue.thelife.service.enums;
+package com.yuyue.thelife.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.yuyue.thelife.base.enums.ConverTableEnum;

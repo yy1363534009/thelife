@@ -1,6 +1,8 @@
 package com.yuyue.thelife.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yuyue.thelife.dao.UserDao;
+import com.yuyue.thelife.mapper.UserMapper;
 import com.yuyue.thelife.model.User;
 import com.yuyue.thelife.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @Description:
  */
 @Service("userService")
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Autowired
     private UserDao userDao;

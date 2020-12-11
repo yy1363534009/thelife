@@ -4,7 +4,7 @@ import com.yuyue.thelife.model.User;
 import com.yuyue.thelife.result.JsonRestResponseVo;
 import com.yuyue.thelife.service.UserService;
 import com.yuyue.thelife.service.api.UserServiceApi;
-import com.yuyue.thelife.service.enums.Type;
+import com.yuyue.thelife.enums.Type;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
