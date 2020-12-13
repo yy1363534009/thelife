@@ -1,18 +1,19 @@
-package com.yuyue.thelife.security.service.enums;
+package com.yuyue.thelife.security.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.yuyue.thelife.base.enums.ConverTableEnum;
 
 /**
  * @Author: yuyue
- * @Date: 2020/12/6 21:10
- * @Description: 性别
+ * @Date: 2020/12/6 20:51
+ * @Description: 登录方式
  */
-public enum Gender implements ConverTableEnum<Gender, Integer> {
+public enum LoginMethod implements ConverTableEnum<LoginMethod, Integer> {
     //
-    unknown(0, "未知"),
-    MEN(1, "男"),
-    WOMEN(2, "女"),
+    WECHAT(0, "微信小程序"),
+    CUSTOM(1, "自定义用户名"),
+    MOBILE(2, "手机号"),
+    EMAIL(3, "邮箱"),
     ;
 
     @EnumValue
@@ -21,16 +22,16 @@ public enum Gender implements ConverTableEnum<Gender, Integer> {
     private String description;
 
 
-    Gender(Integer code, String description) {
+    LoginMethod(Integer code, String description) {
         this.code = code;
         this.description = description;
     }
 
-    public Gender getBycode(Integer code) {
+    public LoginMethod getBycode(Integer code) {
         if (code == null) {
             return null;
         }
-        for (Gender t : values()) {
+        for (LoginMethod t : values()) {
             if (t.getCode().equals(code)) {
                 return t;
             }
@@ -49,7 +50,7 @@ public enum Gender implements ConverTableEnum<Gender, Integer> {
     }
 
     @Override
-    public Gender returnEnum(Integer var1) {
+    public LoginMethod returnEnum(Integer var1) {
         return getBycode(code);
     }
 }

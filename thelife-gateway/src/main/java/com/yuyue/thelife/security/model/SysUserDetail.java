@@ -1,7 +1,7 @@
 package com.yuyue.thelife.security.model;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.yuyue.thelife.security.service.enums.Gender;
+import com.yuyue.thelife.security.enums.Gender;
 import lombok.Data;
 
 import java.util.Date;

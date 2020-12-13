@@ -1,7 +1,7 @@
 package com.yuyue.thelife.security.model;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.yuyue.thelife.security.service.enums.LoginMethod;
+import com.yuyue.thelife.security.enums.LoginMethod;
 import lombok.Data;
 
 import java.util.Date;
@@ -18,7 +18,7 @@ public class SysUser {
     /**
      * 主键 用户ID
      */
-    @TableId(type= IdType.ASSIGN_ID)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**

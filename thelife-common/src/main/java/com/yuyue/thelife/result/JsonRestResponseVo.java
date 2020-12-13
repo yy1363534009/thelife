@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class JsonRestResponseVo implements Serializable {
 
     // 响应业务状态
-    private Integer code;
+    private Integer status;
 
     // 响应消息
     private String message;
@@ -23,18 +23,18 @@ public class JsonRestResponseVo implements Serializable {
     public JsonRestResponseVo() {
     }
     public JsonRestResponseVo(Object data) {
-        this.code = 200;
+        this.status = 200;
         this.message = "SUCCESS";
         this.data = data;
     }
     public JsonRestResponseVo(String message, Object data) {
-        this.code = 200;
+        this.status = 200;
         this.message = message;
         this.data = data;
     }
 
-    public JsonRestResponseVo(Integer code, String message, Object data) {
-        this.code = code;
+    public JsonRestResponseVo(Integer status, String message, Object data) {
+        this.status = status;
         this.message = message;
         this.data = data;
     }
@@ -52,12 +52,12 @@ public class JsonRestResponseVo implements Serializable {
         return new JsonRestResponseVo(message, data);
     }
 
-    public static JsonRestResponseVo build(Integer code, String message) {
-        return new JsonRestResponseVo(code, message, null);
+    public static JsonRestResponseVo build(Integer status, String message) {
+        return new JsonRestResponseVo(status, message, null);
     }
 
-    public static JsonRestResponseVo build(Integer code, String message, Object data) {
-        return new JsonRestResponseVo(code, message, data);
+    public static JsonRestResponseVo build(Integer status, String message, Object data) {
+        return new JsonRestResponseVo(status, message, data);
     }
 
     public String toJsonString() {

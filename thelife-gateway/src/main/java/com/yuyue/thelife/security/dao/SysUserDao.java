@@ -1,5 +1,6 @@
 package com.yuyue.thelife.security.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yuyue.thelife.security.mapper.SysUserMapper;
 import com.yuyue.thelife.security.model.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,14 @@ public class SysUserDao {
     @Autowired
     private SysUserMapper sysUserMapper;
 
-    public Integer insert(SysUser sysUser) {
+    public int insert(SysUser sysUser) {
         return sysUserMapper.insert(sysUser);
+    }
+
+    public SysUser queryByUsername(String username) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(SysUser::getUsername, username);
+        return sysUserMapper.selectOne(queryWrapper);
     }
 
 }

@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * 密码加密方式
      * @return
      */
-    @Bean
+    @Bean("bCryptPasswordEncoder")
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
@@ -108,6 +108,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 //security登录接口
                 .antMatchers("/auth/login").permitAll()
+                .antMatchers("/auth/wechat/login").permitAll()
+                .antMatchers("/auth/register").permitAll()
                 // 所有请求都需要认证
                 .anyRequest().authenticated()
                 .and().apply(new TokenConfigurer(tokenProvider))

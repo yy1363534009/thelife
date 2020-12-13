@@ -16,7 +16,7 @@ public class SysUserDetailDao {
     @Autowired
     private SysUserDetailMapper sysUserDetailMapper;
 
-    public Integer insert(SysUserDetail sysUserDetail) {
+    public int insert(SysUserDetail sysUserDetail) {
         return sysUserDetailMapper.insert(sysUserDetail);
     }
 

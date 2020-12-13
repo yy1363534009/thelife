@@ -21,6 +21,13 @@
             <version>${thelife.version}</version>
         </dependency>
 
+        <!--Spring boot 测试-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!--zuul路由网关依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

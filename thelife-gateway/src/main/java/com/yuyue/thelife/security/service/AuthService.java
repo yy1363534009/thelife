@@ -1,15 +1,15 @@
 package com.yuyue.thelife.security.service;
 
-import com.yuyue.thelife.result.JsonRestResponseVo;
 import com.yuyue.thelife.security.request.RegisterRequest;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  * @Author: yuyue
  * @Date: 2020/12/6 20:25
  * @Description:
  */
-public interface AuthService {
+public interface AuthService extends UserDetailsService {
 
-    JsonRestResponseVo register(RegisterRequest registerRequest);
+    void register(RegisterRequest registerRequest);
 
 }
