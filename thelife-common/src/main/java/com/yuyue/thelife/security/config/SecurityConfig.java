@@ -4,7 +4,6 @@ import com.yuyue.thelife.security.security.JwtAccessDeniedHandler;
 import com.yuyue.thelife.security.security.JwtAuthenticationEntryPoint;
 import com.yuyue.thelife.security.security.TokenConfigurer;
 import com.yuyue.thelife.security.security.TokenProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,6 +14,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.filter.CorsFilter;
+
+import javax.annotation.Resource;
 
 /**
  * @Description:
@@ -27,29 +28,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * 跨域
      */
-    @Autowired
+    @Resource
     private CorsFilter corsFilter;
 
     /**
      * 未认证处理
      */
-    @Autowired
+    @Resource(name = "jwtAuthenticationEntryPoint")
     private JwtAuthenticationEntryPoint authenticationErrorHandler;
 
     /**
      * 未授权处理
      */
-    @Autowired
+    @Resource(name = "jwtAccessDeniedHandler")
     private JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
     /**
      * token工具
      */
-    @Autowired
+    @Resource(name = "tokenProvider")
     private TokenProvider tokenProvider;
 
     /**
      * 密码加密方式
+     *
      * @return
      */
     @Bean("bCryptPasswordEncoder")

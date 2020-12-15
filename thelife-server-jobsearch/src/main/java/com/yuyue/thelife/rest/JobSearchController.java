@@ -25,7 +25,7 @@ public class JobSearchController {
     @GetMapping
     public JsonRestResponseVo get() {
         Object object = "获取找工作信息成功" + applicationName;
-        return JsonRestResponseVo.Success(object);
+        return JsonRestResponseVo.success(object);
     }
 
 }

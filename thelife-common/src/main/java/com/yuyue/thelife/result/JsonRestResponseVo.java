@@ -6,31 +6,39 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * rest统一响应结果
+ * @Description: rest统一响应结果
+ * @author: yuyue
+ * @create: 2020-11-23 23:42:16
  */
 @Data
 public class JsonRestResponseVo implements Serializable {
 
-    // 响应业务状态
+    private static final String DEFAULT_SUCCESS_MESSAGE = "请求成功";
+
+    private static final String DEFAULT_ERROR_MESSAGE = "请求异常";
+
+    private static final Integer DEFAULT_SUCCESS_CODE = 200;
+
+    private static final Integer DEFAULT_ERROR_CODE = 500;
+
+    /**
+     * 响应业务状态
+     */
     private Integer status;
 
-    // 响应消息
+    /**
+     * 响应消息
+     */
     private String message;
 
-    // 响应中的数据
+    /**
+     * 响应数据
+     */
     private Object data;
 
-    public JsonRestResponseVo() {
-    }
-    public JsonRestResponseVo(Object data) {
-        this.status = 200;
-        this.message = "SUCCESS";
-        this.data = data;
-    }
-    public JsonRestResponseVo(String message, Object data) {
-        this.status = 200;
+    public JsonRestResponseVo(Integer status, String message) {
+        this.status = status;
         this.message = message;
-        this.data = data;
     }
 
     public JsonRestResponseVo(Integer status, String message, Object data) {
@@ -39,34 +47,38 @@ public class JsonRestResponseVo implements Serializable {
         this.data = data;
     }
 
-    public static JsonRestResponseVo Success() {
-        return new JsonRestResponseVo(null);
-    }
-    public static JsonRestResponseVo Success(String message) {
-        return new JsonRestResponseVo(message, null);
-    }
-    public static JsonRestResponseVo Success(Object data) {
-        return new JsonRestResponseVo(data);
-    }
-    public static JsonRestResponseVo Success(String message, Object data) {
-        return new JsonRestResponseVo(message, data);
+    public static JsonRestResponseVo success() {
+        return new JsonRestResponseVo(DEFAULT_SUCCESS_CODE, DEFAULT_SUCCESS_MESSAGE);
     }
 
-    public static JsonRestResponseVo build(Integer status, String message) {
-        return new JsonRestResponseVo(status, message, null);
+    public static JsonRestResponseVo success(String message) {
+        return new JsonRestResponseVo(DEFAULT_SUCCESS_CODE, message);
     }
 
-    public static JsonRestResponseVo build(Integer status, String message, Object data) {
+    public static JsonRestResponseVo success(Object data) {
+        return new JsonRestResponseVo(DEFAULT_SUCCESS_CODE, DEFAULT_SUCCESS_MESSAGE, data);
+    }
+
+    public static JsonRestResponseVo error(String message) {
+        return new JsonRestResponseVo(DEFAULT_ERROR_CODE, message);
+    }
+
+    public static JsonRestResponseVo error(Object data) {
+        return new JsonRestResponseVo(DEFAULT_ERROR_CODE, DEFAULT_ERROR_MESSAGE, data);
+    }
+
+    public static JsonRestResponseVo error(Integer status, String message) {
+        return new JsonRestResponseVo(status, message);
+    }
+
+    public static JsonRestResponseVo error(Integer status, String message, Object data) {
         return new JsonRestResponseVo(status, message, data);
-    }
-
-    public String toJsonString() {
-        return JSON.toJSONString(this);
     }
 
 
     /**
      * JSON字符串转成 JsonRestResponseVo 对象
+     *
      * @param json
      * @return
      */

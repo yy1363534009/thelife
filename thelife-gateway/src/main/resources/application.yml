@@ -61,13 +61,13 @@ zuul: # 网关配置
       stripPrefix: false
 
 #hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: SEMAPHORE
-          thread:
-            timeout-in-milliseconds: 3000 # 熔断超时时长：3000ms
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+#          thread:
+#            timeout-in-milliseconds: 3000 # 熔断超时时长：3000ms
 ## Ribbon 配置
 ribbon:
   # http建立socket超时时间,毫秒

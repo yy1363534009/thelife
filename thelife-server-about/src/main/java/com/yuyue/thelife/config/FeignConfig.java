@@ -5,11 +5,11 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -21,7 +21,7 @@ public class FeignConfig implements RequestInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(FeignConfig.class);
 
-    @Autowired
+    @Resource
     private SecurityProperties properties;
 
     /**

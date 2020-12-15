@@ -11,7 +11,6 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,6 +18,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.security.Key;
 import java.util.Arrays;
@@ -34,13 +34,13 @@ import java.util.stream.Collectors;
  * @create: 2020-11-30 22:03:57
  */
 @Slf4j
-@Component
+@Component("tokenProvider")
 public class TokenProvider implements InitializingBean {
 
-    @Autowired
+    @Resource
     private SecurityProperties properties;
 
-    @Autowired
+    @Resource(name = "redisUtils")
     private RedisUtils redisUtils;
 
     public static final String AUTHORITIES_KEY = "auth";

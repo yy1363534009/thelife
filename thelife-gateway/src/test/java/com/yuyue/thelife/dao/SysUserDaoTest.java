@@ -6,10 +6,11 @@ import com.yuyue.thelife.security.enums.LoginMethod;
 import com.yuyue.thelife.security.model.SysUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: yuyue
@@ -20,10 +21,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SysUserDaoTest {
 
-    @Autowired
+    @Resource(name = "sysUserDao")
     private SysUserDao sysUserDao;
 
-    @Autowired
+    @Resource
     private PasswordEncoder passwordEncoder;
 
     @Test

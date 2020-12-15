@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author: yuyue
  * @create: 2020-11-29 20:23:36
  */
-@Component
+@Component("jwtAuthenticationEntryPoint")
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override

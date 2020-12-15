@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.Cursor;
@@ -13,6 +12,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -21,12 +21,12 @@ import java.util.concurrent.TimeUnit;
  * @author: yuyue
  * @create: 2020-11-30 22:14:22
  */
-@Component
+@Component("redisUtils")
 @SuppressWarnings({"unchecked", "all"})
 public class RedisUtils {
     private static final Logger log = LoggerFactory.getLogger(RedisUtils.class);
 
-    @Autowired
+    @Resource
     private RedisTemplate<Object, Object> redisTemplate;
 
 //    @Value("${jwt.online-key}")

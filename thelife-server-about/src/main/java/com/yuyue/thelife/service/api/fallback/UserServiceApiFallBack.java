@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class UserServiceApiFallBack implements UserServiceApi {
 
     @Override
-    public JsonRestResponseVo getJobsearch() {
+    public JsonRestResponseVo getJobSearch() {
         return null;
     }
 

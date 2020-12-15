@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author: yuyue
  * @create 2020/11/30 11:34
  */
-//@FeignClient(name = "TheLife-Server-Jobsearch", configuration = FeignConfig.class, fallback = AboutServiceFallBack.class)
 @FeignClient(name = "TheLife-Server-Jobsearch", configuration = FeignConfig.class)
 public interface UserServiceApi {
 
+    /**
+     * 测试
+     * @return
+     */
     @GetMapping(value = "/jobsearch")
-    JsonRestResponseVo getJobsearch();
+    JsonRestResponseVo getJobSearch();
+
 
 }

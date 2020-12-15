@@ -3,8 +3,9 @@ package com.yuyue.thelife.security.dao;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yuyue.thelife.security.mapper.SysUserMapper;
 import com.yuyue.thelife.security.model.SysUser;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: yuyue
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service("sysUserDao")
 public class SysUserDao {
 
-    @Autowired
+    @Resource
     private SysUserMapper sysUserMapper;
 
     public int insert(SysUser sysUser) {

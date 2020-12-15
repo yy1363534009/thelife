@@ -1,7 +1,9 @@
 package com.yuyue.thelife.security.request;
 
-import com.yuyue.thelife.security.request.base.WeChatUserInfo;
+import com.yuyue.thelife.security.request.base.UserDetail;
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * @Description:
@@ -16,11 +18,12 @@ public class WeChatAuthUserRequest {
      * https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html
      * 微信小程序用户登录流程：https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html
      */
+    @NotBlank(message = "code不能为空")
     private String code;
 
     /**
      * 第一次登录，保存微信用户信息
      */
-    private WeChatUserInfo weChatUserInfo;
+    private UserDetail userDetail;
 
 }

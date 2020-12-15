@@ -8,7 +8,7 @@ import lombok.Data;
  * @create: 2020-11-24 23:11:22
  */
 @Data
-public class WeChatUserInfo {
+public class UserDetail {
 
     /**
      * app显示名 例："唔~~ 起飞"

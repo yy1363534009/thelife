@@ -2,8 +2,9 @@ package com.yuyue.thelife.security.dao;
 
 import com.yuyue.thelife.security.mapper.SysUserDetailMapper;
 import com.yuyue.thelife.security.model.SysUserDetail;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: yuyue
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service("sysUserDetailDao")
 public class SysUserDetailDao {
 
-    @Autowired
+    @Resource
     private SysUserDetailMapper sysUserDetailMapper;
 
     public int insert(SysUserDetail sysUserDetail) {
