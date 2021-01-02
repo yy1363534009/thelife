@@ -9,18 +9,19 @@ import org.springframework.web.filter.CorsFilter;
 import javax.annotation.Resource;
 
 /**
- * @Description: 网关服务配置
+ * @Description: 跨域资源共享配置
  * @author: yuyue
  * @create: 2020-11-25 23:20:01
  */
 @Configuration
-public class ZuulConfig {
+public class CorsConfig {
 
     @Resource
     private SecurityProperties properties;
 
     /**
      * 解决前后端分离中的cors跨域问题
+     *
      * @return
      */
     @Bean
@@ -32,7 +33,7 @@ public class ZuulConfig {
         corsConfiguration.addAllowedOrigin("*");
         corsConfiguration.addAllowedMethod("*");
         //↓核心代码(请求头放行Authorization)
-        corsConfiguration.addExposedHeader(properties.getHeader());//
+        corsConfiguration.addExposedHeader(properties.getHeader());
         source.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(source);
     }

@@ -1,5 +1,6 @@
 package com.yuyue.thelife.exception.hanlder;
 
+import com.yuyue.thelife.exception.exception.AuthException;
 import com.yuyue.thelife.exception.exception.ServiceException;
 import com.yuyue.thelife.result.JsonRestResponseVo;
 import org.slf4j.Logger;
@@ -16,7 +17,7 @@ import java.util.List;
 /**
  * @Author: yuyue
  * @Date: 2020/12/13 11:29
- * @Description: 全局异常统一JOSN返回
+ * @Description: 全局异常统一处理，统一JOSN返回
  */
 @RestControllerAdvice
 public class GlobalExceptionHanlder {
@@ -25,11 +26,23 @@ public class GlobalExceptionHanlder {
 
     /**
      * 未知异常
+     *
      * @param e
      * @return
      */
     @ExceptionHandler(Throwable.class)
     public JsonRestResponseVo hanlderThrowable(Throwable e) {
+        return buildJsonRestResponseVo(e.getMessage());
+    }
+
+    /**
+     * 认证授权异常
+     *
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(AuthException.class)
+    public JsonRestResponseVo handleAuthException(AuthException e) {
         return buildJsonRestResponseVo(e.getMessage());
     }
 
@@ -40,7 +53,7 @@ public class GlobalExceptionHanlder {
      * @return
      */
     @ExceptionHandler(ServiceException.class)
-    public JsonRestResponseVo handleSecurityException(ServiceException e) {
+    public JsonRestResponseVo hanlderServiceException(ServiceException e) {
         return buildJsonRestResponseVo(e.getMessage());
     }
 

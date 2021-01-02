@@ -13,44 +13,48 @@ import java.util.Collection;
  * @author: yuyue
  * @create: 2020-11-29 15:10:27
  */
-@Getter //提供get方法
-@AllArgsConstructor //全部参数构造器
+@Getter
+@AllArgsConstructor
 public class JwtUser implements UserDetails {
 
     /**
-     * 用户名
+     * 用户信息
      */
-    private String username;
+    private User user;
 
     /**
-     * 密码
+     * 用户详情信息
      */
-    @JsonIgnore//返回json数据时不被包含
-    private String password;
-
-    /**
-     * 别名
-     */
-    private String nickname;
+    private UserDetail userDetail;
 
     /**
      * 权限
      */
-    private Collection<? extends GrantedAuthority> authorities;
+    @JsonIgnore
+    private Collection<GrantedAuthority> authorities;
 
-    /**
-     * 用户是否被禁用：true=>不禁用，false=>禁用
-     */
-    private boolean isEnabled;
+
+    @JsonIgnore
+    @Override
+    public String getPassword() {
+        return user.getPassword();
+    }
+
+    @JsonIgnore
+    @Override
+    public String getUsername() {
+        return user.getUsername();
+    }
 
     /**
      * 用户账号是痘过期
      *
      * @return
      */
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return user.isAccountNonExpired();
     }
 
     /**
@@ -58,9 +62,10 @@ public class JwtUser implements UserDetails {
      *
      * @return
      */
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return user.isAccountNonLocked();
     }
 
     /**
@@ -68,14 +73,19 @@ public class JwtUser implements UserDetails {
      *
      * @return
      */
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return user.isCredentialsNonExpired();
     }
 
+    /**
+     * 用户是否被禁用：true=>不禁用，false=>禁用
+     */
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
-        return isEnabled;
+        return user.isEnabled();
     }
 
 

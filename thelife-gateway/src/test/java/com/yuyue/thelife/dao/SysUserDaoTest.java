@@ -1,8 +1,8 @@
 package com.yuyue.thelife.dao;
 
 import com.alibaba.fastjson.JSON;
-import com.yuyue.thelife.security.dao.SysUserDao;
 import com.yuyue.thelife.security.enums.LoginMethod;
+import com.yuyue.thelife.security.dao.SysUserDao;
 import com.yuyue.thelife.security.model.SysUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;

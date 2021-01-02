@@ -1,13 +1,13 @@
 package com.yuyue.thelife.exception.enums;
 
-import com.yuyue.thelife.exception.hanlder.AbstarctBaseException;
+import com.yuyue.thelife.exception.enums.abst.AbstractBaseException;
 
 /**
  * @Author: yuyue
  * @Date: 2020/12/15 19:58
- * @Description:
+ * @Description: 认证授权异常枚举
  */
-public enum AuthExceptionEnum implements AbstarctBaseException {
+public enum AuthExceptionEnum implements AbstractBaseException {
     /**
      * 用户名或密码不正确
      */

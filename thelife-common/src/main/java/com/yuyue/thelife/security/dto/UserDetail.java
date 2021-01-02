@@ -1,27 +1,28 @@
-package com.yuyue.thelife.security.model;
+package com.yuyue.thelife.security.dto;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yuyue.thelife.security.enums.Gender;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @Author: yuyue
- * @Date: 2020/12/6 21:06
- * @Description:
+ * @Date: 2021/1/2 11:44
+ * @Description: 用户详情
  */
-@Data
-@TableName("sys_user_detail")
-public class SysUserDetail implements Serializable {
+@Getter
+@Setter
+public class UserDetail implements Serializable {
 
-    private static final long serialVersionUID = 7679713245136464950L;
+
+    private static final long serialVersionUID = -2140916598988819986L;
 
     /**
      * 主键 用户详细ID
      */
-    @TableId(type= IdType.ASSIGN_ID)
     private Long id;
 
     /**
@@ -77,13 +78,13 @@ public class SysUserDetail implements Serializable {
     /**
      * 创建时间
      */
-    @TableField(fill = FieldFill.INSERT)
+    @JsonIgnore
     private Date createTime;
 
     /**
      * 更新时间
      */
-    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonIgnore
     private Date updateTime;
 
 }

@@ -1,12 +1,15 @@
 package com.yuyue.thelife.security.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
 import com.yuyue.thelife.exception.enums.AuthExceptionEnum;
-import com.yuyue.thelife.exception.exception.ServiceException;
+import com.yuyue.thelife.exception.exception.AuthException;
 import com.yuyue.thelife.security.config.SecurityProperties;
 import com.yuyue.thelife.security.dao.SysUserDao;
 import com.yuyue.thelife.security.dao.SysUserDetailDao;
 import com.yuyue.thelife.security.dto.JwtUser;
+import com.yuyue.thelife.security.dto.User;
+import com.yuyue.thelife.security.dto.UserDetail;
 import com.yuyue.thelife.security.enums.LoginMethod;
 import com.yuyue.thelife.security.model.SysUser;
 import com.yuyue.thelife.security.model.SysUserDetail;
@@ -20,7 +23,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -109,14 +111,14 @@ public class AuthServiceImpl implements AuthService, UserDetailsService {
         logger.info("注册开始-当前用户：RegisterRequest={}", JSON.toJSONString(registerRequest));
         SysUser user = sysUserDao.queryByUsername(registerRequest.getUsername());
         if (user != null) {
-            throw new ServiceException(AuthExceptionEnum.USER_EXIST);
+            throw new AuthException(AuthExceptionEnum.USER_EXIST);
         }
         Date now = new Date();
         SysUser sysUser = new SysUser();
         sysUser.setUsername(registerRequest.getUsername());
         if (registerRequest.getLoginMethod() == LoginMethod.WECHAT) {
             // 去用户名表中查看openId是否注册，如果未注册就自动注册，因为微信小程序password不存，就指定。
-            String password = "wechatpassword";
+            String password = "123456";
             sysUser.setPassword(passwordEncoder.encode(password));
         } else {
             sysUser.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
@@ -138,18 +140,29 @@ public class AuthServiceImpl implements AuthService, UserDetailsService {
         logger.info("注册结束");
     }
 
+    /**
+     * security框架自定义完成用户名密码校验逻辑
+     *
+     * @param username
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public JwtUser loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        SysUser user = sysUserDao.queryByUsername(username);
-        if (user == null) {
-            throw new ServiceException(AuthExceptionEnum.USERNAMEPASSWORD_NOTFOUND);
+        SysUser sysUser = sysUserDao.queryByUsername(username);
+        SysUserDetail sysUserDetail = sysUserDetailDao.getByUserId(sysUser.getId());
+        if (sysUser == null) {
+            throw new AuthException(AuthExceptionEnum.USERNAMEPASSWORD_NOTFOUND);
         }
-        if (user.getIsEnabled() != 1) {
-            throw new ServiceException(AuthExceptionEnum.USER_ISENABLED);
+        if (!sysUser.isEnabled()) {
+            throw new AuthException(AuthExceptionEnum.USER_ISENABLED);
         }
-        JwtUser jwtUser = new JwtUser(user.getUsername(), user.getPassword(), user.getUsername(),
-                AuthorityUtils.commaSeparatedStringToAuthorityList("ADMIN"), user.getIsEnabled() == 1 ? true : false);
+        User user = new User();
+        UserDetail userDetail = new UserDetail();
+        BeanUtil.copyProperties(sysUser, user);
+        BeanUtil.copyProperties(sysUserDetail, userDetail);
+        JwtUser jwtUser = new JwtUser(user, userDetail, null);
         return jwtUser;
 
     }

@@ -1,27 +1,25 @@
-package com.yuyue.thelife.security.model;
+package com.yuyue.thelife.security.dto;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yuyue.thelife.security.enums.LoginMethod;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @Author: yuyue
- * @Date: 2020/12/6 20:32
- * @Description:
+ * @Date: 2021/1/2 11:44
+ * @Description: 用户
  */
-@Data
-@TableName("sys_user")
-public class SysUser implements Serializable {
-
-    private static final long serialVersionUID = -7711347023357155671L;
+@Getter
+@Setter
+public class User implements Serializable {
 
     /**
-     * 主键 用户ID
+     * 用户ID
      */
-    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
@@ -32,43 +30,69 @@ public class SysUser implements Serializable {
     /**
      * 密码
      */
+    @JsonIgnore
     private String password;
 
     /**
      * 登录方式(0=移动端微信小程序，1=自定义用户名，2=手机号，3=邮箱，)
      */
+    @JsonIgnore
     private LoginMethod loginMethod;
 
     /**
      * 帐户是否过期(1=未过期，0=已过期)
      */
+    @JsonIgnore
     private boolean isAccountNonExpired = true;
 
     /**
      * 帐户是否被锁定(1=未过期，0=已过期)
      */
+    @JsonIgnore
     private boolean isAccountNonLocked = true;
 
     /**
      * 密码是否过期(1=未过期，0=已过期)
      */
+    @JsonIgnore
     private boolean isCredentialsNonExpired = true;
 
     /**
      * 帐户是否可用(1=可用，0=删除用户)
      */
+    @JsonIgnore
     private boolean isEnabled = true;
 
     /**
      * 创建时间
      */
-    @TableField(fill = FieldFill.INSERT)
+    @JsonIgnore
     private Date createTime;
 
     /**
      * 更新时间
      */
-    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonIgnore
     private Date updateTime;
+
+    @JsonIgnore
+    public boolean isAccountNonExpired() {
+        return isAccountNonExpired;
+    }
+
+    @JsonIgnore
+    public boolean isAccountNonLocked() {
+        return isAccountNonLocked;
+    }
+
+    @JsonIgnore
+    public boolean isCredentialsNonExpired() {
+        return isCredentialsNonExpired;
+    }
+
+    @JsonIgnore
+    public boolean isEnabled() {
+        return isEnabled;
+    }
 
 }

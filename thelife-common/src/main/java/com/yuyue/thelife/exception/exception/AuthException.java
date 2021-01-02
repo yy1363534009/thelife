@@ -4,10 +4,10 @@ import com.yuyue.thelife.exception.enums.abst.AbstractBaseException;
 
 /**
  * @Author: yuyue
- * @Date: 2020/12/15 19:49
- * @Description: 业务异常
+ * @Date: 2021/1/2 10:53
+ * @Description: 认证授权异常
  */
-public class ServiceException extends RuntimeException {
+public class AuthException extends RuntimeException {
 
     /**
      * 状态码
@@ -19,7 +19,7 @@ public class ServiceException extends RuntimeException {
      */
     private String message;
 
-    public ServiceException(AbstractBaseException e) {
+    public AuthException(AbstractBaseException e) {
         super(e.getMessage());
         code = e.getCode();
         message = e.getMessage();
