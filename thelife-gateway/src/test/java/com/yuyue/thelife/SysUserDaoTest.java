@@ -1,4 +1,4 @@
-package com.yuyue.thelife.dao;
+package com.yuyue.thelife;
 
 import com.alibaba.fastjson.JSON;
 import com.yuyue.thelife.security.enums.LoginMethod;

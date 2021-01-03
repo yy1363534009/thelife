@@ -1,4 +1,4 @@
-package com.yuyue.thelife.security.request;
+package com.yuyue.thelife.security.param;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
  * @create: 2020-11-29 15:10:27
  */
 @Data
-public class AuthUserRequest {
+public class AuthUserParam {
 
     /**
      * 用户名

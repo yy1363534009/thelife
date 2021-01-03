@@ -1,10 +1,9 @@
 package com.yuyue.thelife.security.service;
 
-import com.yuyue.thelife.security.request.AuthUserRequest;
-import com.yuyue.thelife.security.request.RegisterRequest;
-import com.yuyue.thelife.security.request.WeChatAuthUserRequest;
-
-import java.util.Map;
+import com.yuyue.thelife.security.param.AuthUserParam;
+import com.yuyue.thelife.security.param.RegisterParam;
+import com.yuyue.thelife.security.param.WeChatAuthUserParam;
+import com.yuyue.thelife.security.result.AuthResult;
 
 /**
  * @Author: yuyue
@@ -15,22 +14,22 @@ public interface AuthService {
 
     /**
      * pc段登录
-     * @param authUserRequest
+     * @param authUserParam
      * @return
      */
-    Map<String, Object> login(AuthUserRequest authUserRequest);
+    AuthResult login(AuthUserParam authUserParam);
 
     /**
      * 微信小程序登录
-     * @param weChatAuthUserRequest
+     * @param weChatAuthUserParam
      * @return
      */
-    Map<String, Object> wechatLogin(WeChatAuthUserRequest weChatAuthUserRequest);
+    AuthResult wechatLogin(WeChatAuthUserParam weChatAuthUserParam);
 
     /**
      * 注册
-     * @param registerRequest
+     * @param registerParam
      */
-    void register(RegisterRequest registerRequest);
+    void register(RegisterParam registerParam);
 
 }

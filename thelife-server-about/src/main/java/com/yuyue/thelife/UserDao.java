@@ -1,4 +1,4 @@
-package com.yuyue.thelife.dao;
+package com.yuyue.thelife;
 
 import com.yuyue.thelife.mapper.UserMapper;
 import com.yuyue.thelife.model.User;

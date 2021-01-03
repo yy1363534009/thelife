@@ -1,3 +1,11 @@
+wechat:
+  #小程序ID
+  AppID: wx24716b76a4abcca4
+  #小程序密钥
+  AppSecret: 152badd58a3fcdfd5a7790af87db70d3
+  #微信小程序登录系统默认统一密码
+  defaultPwd: 123456
+
 #配置数据源
 spring:
   datasource:

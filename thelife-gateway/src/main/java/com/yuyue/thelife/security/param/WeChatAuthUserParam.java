@@ -1,9 +1,10 @@
-package com.yuyue.thelife.security.request;
+package com.yuyue.thelife.security.param;
 
-import com.yuyue.thelife.security.request.base.UserDetail;
+import com.yuyue.thelife.security.dto.UserDetail;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 /**
  * @Description:
@@ -11,7 +12,9 @@ import javax.validation.constraints.NotBlank;
  * @create: 2020-11-24 23:21:30
  */
 @Data
-public class WeChatAuthUserRequest {
+public class WeChatAuthUserParam implements Serializable {
+
+    private static final long serialVersionUID = 7090373987887381723L;
 
     /**
      * 用户登录凭证（有效期五分钟）。开发者需要在开发者服务器后台调用 auth.code2Session，使用 code 换取 openid 和 session_key 等信息

@@ -1,4 +1,4 @@
-package com.yuyue.thelife.security.request;
+package com.yuyue.thelife.security.param;
 
 import com.yuyue.thelife.security.enums.LoginMethod;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @Description:
  */
 @Data
-public class RegisterRequest implements Serializable {
+public class RegisterParam implements Serializable {
 
     private static final long serialVersionUID = 6816486975187206757L;
 
@@ -29,7 +29,7 @@ public class RegisterRequest implements Serializable {
      * 密码
      */
     @NotBlank(message = "密码不能为空")
-    @Size(min = 8, message = "密码至少8位")
+    @Size(min = 6, message = "密码至少6位")
     private String password;
 
     /**

@@ -1,7 +1,7 @@
 server:
   port: 80
   servlet:
-    context-path: /thelife-webapp
+    context-path: /thelife-webapp/api
   tomcat:
     uri-encoding: UTF-8
 
@@ -47,10 +47,10 @@ zuul: # 网关配置
   sensitive-headers: null # 默认Zuul认为请求头中 "Cookie", "Set-Cookie", "Authorization" 是敏感信息，它不会转发请求，因为把它设置为空，就会转发了
   add-host-header: true # 正确的处理重定向操作
   routes:
-#    thelife-gateway: # 路由名称，名称任意，保持所有路由名称唯一
-#      path: /auth/** # 访问路径，转发到 auth-server 服务处理
-#      serviceId: TheLife-Gateway # 指定服务ID，会自动从Eureka中找到此服务的ip和端口（网关进行权限控制）
-#      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
+    #    thelife-gateway: # 路由名称，名称任意，保持所有路由名称唯一
+    #      path: /auth/** # 访问路径，转发到 auth-server 服务处理
+    #      serviceId: TheLife-Gateway # 指定服务ID，会自动从Eureka中找到此服务的ip和端口（网关进行权限控制）
+    #      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
     thelife-server-jobsearch:
       path: /jobsearch/**
       serviceId: TheLife-Server-Jobsearch
@@ -75,9 +75,28 @@ ribbon:
   # http读取响应socket超时时间
   ReadTimeout: 3000
   # 同一台实例最大重试次数,不包括首次调用
-#  MaxAutoRetries: 0
+  #  MaxAutoRetries: 0
   # 重试负载均衡其他的实例最大重试次数,不包括首次server
-#  MaxAutoRetriesNextServer: 2
+  #  MaxAutoRetriesNextServer: 2
   # 是否所有操作都重试，POST请求注意多次提交错误。
   # 默认false，设定为false的话，只有get请求会重试
 #  OkToRetryOnAllOperations: true
+
+
+#最大连接数
+http:
+  maxTotal: 100
+  #并发数
+  defaultMaxPerRoute: 20
+  #创建连接的最长时间
+  connectTimeout: 1000
+  #从连接池中获取到连接的最长时间
+  connectionRequestTimeout: 500
+  #数据传输的最长时间
+  socketTimeout: 10000
+  #提交请求前测试连接是否可用
+  staleConnectionCheckEnabled: true
+  #关闭池中的空闲连接-等待时间(毫秒)
+  waitTime: 30000
+  #关闭池中的空闲连接-空闲时间(分钟)
+  idleConTime: 3

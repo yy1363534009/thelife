@@ -2,8 +2,7 @@ package com.yuyue.thelife.security.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yuyue.thelife.security.enums.Gender;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,8 +12,7 @@ import java.util.Date;
  * @Date: 2021/1/2 11:44
  * @Description: 用户详情
  */
-@Getter
-@Setter
+@Data
 public class UserDetail implements Serializable {
 
 

@@ -110,7 +110,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 //security登录接口
                 .antMatchers("/auth/login").permitAll()
-                .antMatchers("/auth/wechat/login").permitAll()
+                .antMatchers("/auth/wechatLogin").permitAll()
                 .antMatchers("/auth/register").permitAll()
                 // 所有请求都需要认证
                 .anyRequest().authenticated()
