@@ -22,7 +22,7 @@ public class JsonRestResponseVo implements Serializable {
     private static final Integer DEFAULT_ERROR_CODE = 500;
 
     /**
-     * 响应业务状态
+     * 响应状态码
      */
     private Integer status;
 

@@ -127,15 +127,17 @@ public class TokenProvider implements InitializingBean {
 
     /**
      * 检查token
+     *
      * @param authToken
      * @return
      */
-    public boolean validateToken(String authToken){
+    public boolean validateToken(String authToken) {
         return true;
     }
 
     public String getToken(HttpServletRequest request) {
         final String requestHeader = request.getHeader(properties.getHeader());
+        log.info("请求头Authorization:{}", requestHeader);
         if (requestHeader != null && requestHeader.startsWith(properties.getTokenStartWith())) {
             return requestHeader.substring(properties.getTokenStartWith().length());
         }
