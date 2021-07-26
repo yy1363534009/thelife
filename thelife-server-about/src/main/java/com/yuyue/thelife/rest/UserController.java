@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Date;
 
 /**
  * @Description:
@@ -45,12 +44,12 @@ public class UserController {
 
     @PostMapping
     public JsonRestResponseVo insert() {
-        long dateLong = new Date().getTime();
+        long dateLong = System.currentTimeMillis();
         User user = new User();
         user.setName("阿凡达" + dateLong);
         user.setType(Type.PC);
-        Integer i = userService.insert(user);
-        if (i == 1) {
+        boolean b = userService.insert(user);
+        if (b) {
             return JsonRestResponseVo.success();
         }
         return JsonRestResponseVo.error("FAILED");

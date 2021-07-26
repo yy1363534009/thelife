@@ -10,6 +10,6 @@ import com.yuyue.thelife.model.User;
  */
 public interface UserService {
 
-    Integer insert(User user);
+    boolean insert(User user);
 
 }

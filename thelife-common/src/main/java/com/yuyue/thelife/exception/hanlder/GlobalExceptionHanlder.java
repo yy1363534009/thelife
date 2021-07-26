@@ -32,6 +32,7 @@ public class GlobalExceptionHanlder {
      */
     @ExceptionHandler(Throwable.class)
     public JsonRestResponseVo hanlderThrowable(Throwable e) {
+        logger.error(e.getMessage(), e);
         return buildJsonRestResponseVo(e.getMessage());
     }
 
@@ -43,6 +44,7 @@ public class GlobalExceptionHanlder {
      */
     @ExceptionHandler(AuthException.class)
     public JsonRestResponseVo handleAuthException(AuthException e) {
+        logger.error(e.getMessage(), e);
         return buildJsonRestResponseVo(e.getMessage());
     }
 
@@ -54,6 +56,7 @@ public class GlobalExceptionHanlder {
      */
     @ExceptionHandler(ServiceException.class)
     public JsonRestResponseVo hanlderServiceException(ServiceException e) {
+        logger.error(e.getMessage(), e);
         return buildJsonRestResponseVo(e.getMessage());
     }
 
@@ -79,6 +82,7 @@ public class GlobalExceptionHanlder {
      */
     @ExceptionHandler(BadCredentialsException.class)
     public JsonRestResponseVo badCredentialsException(BadCredentialsException e) {
+        logger.error(e.getMessage(), e);
         return buildJsonRestResponseVo(e.getMessage());
     }
 
